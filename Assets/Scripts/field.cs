@@ -76,4 +76,3 @@ public class field : MonoBehaviour
         fed_time_remaining = 10f;
     }
 }
-
