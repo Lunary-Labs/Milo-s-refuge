@@ -58,11 +58,6 @@ public class field : MonoBehaviour
                 gather_speed = base_gather_speed;
             }
         }
-
-        // Left click
-        if (Input.GetMouseButtonDown(0)) {
-            harvest();
-        }
     }
 
     void harvest() {

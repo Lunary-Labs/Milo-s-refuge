@@ -31,10 +31,8 @@ public class field_tile : MonoBehaviour
     }
 
     public void harvest() {
-        if (harvestable) {
-            growth_state = 0f;
-            harvestable = false;
-            next_growth_timer = Random.Range(0f, 1f);
-        }
+        growth_state = 0f;
+        harvestable = false;
+        next_growth_timer = Random.Range(0f, 1f);
     }
 }
