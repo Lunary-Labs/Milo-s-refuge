@@ -7,19 +7,19 @@ public class field : MonoBehaviour
     private GameObject ressource;
     public List<GameObject> childs = new List<GameObject>();
 
-    public float base_growth_speed = 0.1f;
-    public float base_gather_speed = 1f;
+    private float base_growth_speed = 0.1f;
+    private float base_gather_speed = 1f;
 
     private float growth_speed;
     private float gather_speed;
 
     private float fertilizer_mutliplier = 2f;
     private bool is_fertilized = false;
-    public float fertilized_time_remaining = 0f;
+    private float fertilized_time_remaining = 0f;
 
     private float fed_multiplier = 2f;
     private bool is_fed = false;
-    public float fed_time_remaining = 0f;
+    private float fed_time_remaining = 0f;
 
     void Start()
     {

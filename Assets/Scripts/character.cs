@@ -27,7 +27,5 @@ public class character : MonoBehaviour
     public void add_milk(int amount) {
         milk += amount;
     }
-
-
 }
 

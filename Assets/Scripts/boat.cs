@@ -6,6 +6,7 @@ public class boat : MonoBehaviour
 {
     private GameObject character;
 
+    public GameObject island;
     private GameObject main_island_dock;
     private GameObject island_dock;
 
@@ -26,6 +27,7 @@ public class boat : MonoBehaviour
         dest_x = main_island_dock.transform.position.x;
         dest_y = main_island_dock.transform.position.y;
         character = GameObject.Find("character");
+        island = transform.parent.gameObject;
     }
 
     void Update() {
@@ -53,10 +55,32 @@ public class boat : MonoBehaviour
         }
     }
 
-    private void load() {
 
+    // not well written, need to remove all GetComponent<island>()(island) and replace it with a reference so we don't recompute it every time
+    // need to handle every type of ressources and not only wheat and milk
+    // so probably going to use a dictionnary
+    private void load() {
+        int total_island_ressources = island.GetComponent<island>().milk + island.GetComponent<island>().weath;
+
+        while (stock < stock_size && total_island_ressources > 0) {
+            if (island.GetComponent<island>().weath > 0) {
+                wheat += 1;
+                island.GetComponent<island>().weath -= 1;
+                total_island_ressources -= 1;
+                stock += 1;
+            } else if (island.GetComponent<island>().milk > 0) {
+                milk += 1;
+                island.GetComponent<island>().milk -= 1;
+                total_island_ressources -= 1;
+                stock += 1;
+            }
+        }
     }
 
     private void unload() {
+        character.GetComponent<character>().add_milk(milk);
+        character.GetComponent<character>().add_wheat(wheat);
+        milk = 0;
+        wheat = 0;
     }
 }

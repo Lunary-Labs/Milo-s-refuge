@@ -8,7 +8,6 @@ public class island : MonoBehaviour
     public List<GameObject> fields = new List<GameObject>();
     public List<GameObject> cats = new List<GameObject>();
     private TilemapCollider2D[] child_tilemap_colliders;
-    public GameObject boat;
 
     public int weath = 0;
     public int milk = 0;
@@ -26,10 +25,10 @@ public class island : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-        // Récupère la position du clic de souris dans l'espace du monde
+        // get mouse position
         Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // Vérifie si le clic est sur un Tilemap Collider enfant
+            // check if the mouse is over a tilemap collider
             foreach (TilemapCollider2D tilemap_collider in child_tilemap_colliders) {
                 if (tilemap_collider.OverlapPoint(mouse_position)) {
                     harvest();
@@ -37,10 +36,10 @@ public class island : MonoBehaviour
             }
         }
     }
+
     void harvest () {
         foreach (GameObject field in fields) {
             foreach (Transform child in field.transform) {
-                Debug.Log(child.name);
                 if (child.GetComponent<field_tile>().harvestable) {
                     if (child.name == "wheat") {
                         weath += 1;
