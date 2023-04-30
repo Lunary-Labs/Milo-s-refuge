@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 63199823}
   - component: {fileID: 63199824}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69793,7 +69793,7 @@ GameObject:
   - component: {fileID: 1157550605}
   - component: {fileID: 1157550606}
   m_Layer: 0
-  m_Name: Ile
+  m_Name: island
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

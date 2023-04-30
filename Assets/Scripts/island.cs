@@ -19,8 +19,6 @@ public class island : MonoBehaviour
                 fields.Add(child.gameObject);
             } else if (child.name == "cat") {
                 cats.Add(child.gameObject);
-            } else if (child.name == "boat") {
-                boat = child.gameObject;
             }
         }
         child_tilemap_colliders = GetComponentsInChildren<TilemapCollider2D>();

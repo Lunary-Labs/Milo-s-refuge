@@ -7,7 +7,7 @@ public class field : MonoBehaviour
     private GameObject ressource;
     public List<GameObject> childs = new List<GameObject>();
 
-    public float base_growth_speed = 1f;
+    public float base_growth_speed = 0.1f;
     public float base_gather_speed = 1f;
 
     private float growth_speed;

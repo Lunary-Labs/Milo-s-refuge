@@ -19,5 +19,15 @@ public class character : MonoBehaviour
     public void remove_gold(int amount) {
         gold -= amount;
     }
+
+    public void add_wheat(int amount) {
+        weath += amount;
+    }
+
+    public void add_milk(int amount) {
+        milk += amount;
+    }
+
+
 }
 
