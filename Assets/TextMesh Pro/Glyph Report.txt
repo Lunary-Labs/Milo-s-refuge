@@ -1,0 +1,12 @@
+Font: NotJamFaithless9  Style: Medium
+Point Size: 141   SP/PD Ratio: 3,5٪
+
+Characters included: 96/96
+Missing characters: 0
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+
+Characters excluded from packing:
+----------------------------------------

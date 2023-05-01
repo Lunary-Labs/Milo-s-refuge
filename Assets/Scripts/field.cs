@@ -9,10 +9,16 @@ public class field : MonoBehaviour
 
     // Basic growth and gather speed
     private float base_growth_speed = 0.1f;
-    private float base_gather_speed = 1f;
+    private float base_gather_speed = 0.5f;
 
     private float growth_speed;
     private float gather_speed;
+
+    private bool auto_harvest = true;
+
+    // Auto harvest timer
+    private float next_harvest_timer = 0f;
+    private float harvest_timer = 0f;
 
     // Temporary buffs
     private float fertilizer_mutliplier = 2f;
@@ -35,6 +41,14 @@ public class field : MonoBehaviour
     }
 
     void Update() {
+        if (auto_harvest) {
+            harvest_timer += Time.deltaTime;
+            if (harvest_timer >= next_harvest_timer) {
+                random_harvest();
+                harvest_timer = 0f;
+                next_harvest_timer = 1 / gather_speed;
+            }
+        }
 
         // Grow random ressources
         foreach (GameObject child in field_tiles) {
@@ -65,6 +79,19 @@ public class field : MonoBehaviour
     void harvest() {
         foreach (GameObject child in field_tiles) {
             child.GetComponent<field_tile>().harvest();
+        }
+    }
+
+    // need to harvest a number of ressources depending on the number of cats --> harvest stats upgrade
+    void random_harvest() {
+        List<GameObject> harvestable_tiles = new List<GameObject>();
+        foreach (GameObject child in field_tiles) {
+            if (child.GetComponent<field_tile>().harvestable)
+                harvestable_tiles.Add(child);
+        }
+        if (harvestable_tiles.Count > 0) {
+            int random_index = Random.Range(0, harvestable_tiles.Count);
+            harvestable_tiles[random_index].GetComponent<field_tile>().harvest();
         }
     }
 
