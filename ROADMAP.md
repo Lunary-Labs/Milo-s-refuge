@@ -10,4 +10,5 @@
 - [ ] Camera 
 - [x] Wind Mill
 - [ ] cooking
-- [ ] Island upgrade (size) 
+- [x] Island upgrade (size)
+  
