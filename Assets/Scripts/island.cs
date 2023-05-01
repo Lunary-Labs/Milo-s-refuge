@@ -25,8 +25,8 @@ public class island : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-        // get mouse position
-        Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // get mouse position
+            Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             // check if the mouse is over a tilemap collider
             foreach (TilemapCollider2D tilemap_collider in child_tilemap_colliders) {

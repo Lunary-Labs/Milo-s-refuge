@@ -52,10 +52,6 @@ public class cat : MonoBehaviour
             move();
         } else {
             animator.SetFloat("speed", 0);}
-
-        if (Input.GetMouseButtonDown(0)) {
-            set_destination(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-        }
     }
 
     void move() {
