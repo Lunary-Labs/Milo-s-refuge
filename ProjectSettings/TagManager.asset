@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - 'Anime UI '
   - 
   - 
   - 
@@ -40,4 +40,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 'Anime UI '
+    uniqueID: 3966269183
+    locked: 0
+  - name: UI
+    uniqueID: 3317540683
     locked: 0
