@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class field : MonoBehaviour
 {
-    private GameObject ressource;
-    public List<GameObject> childs = new List<GameObject>();
+    public GameObject ressource;
+    public List<GameObject> field_tiles = new List<GameObject>();
+    public List<GameObject> cats = new List<GameObject>();
 
+    // Basic growth and gather speed
     private float base_growth_speed = 0.1f;
     private float base_gather_speed = 1f;
 
     private float growth_speed;
     private float gather_speed;
 
+    // Temporary buffs
     private float fertilizer_mutliplier = 2f;
     private bool is_fertilized = false;
     private float fertilized_time_remaining = 0f;
@@ -21,11 +24,13 @@ public class field : MonoBehaviour
     private bool is_fed = false;
     private float fed_time_remaining = 0f;
 
-    void Start()
-    {
+    void Start() {
         foreach (Transform child in transform)
         {
-            childs.Add(child.gameObject);
+            if (child.name == "wheat" || child.name == "milk")
+                field_tiles.Add(child.gameObject);
+            else if (child.name == "cat")
+                cats.Add(child.gameObject);
         }
 
         growth_speed = base_growth_speed;
@@ -35,7 +40,7 @@ public class field : MonoBehaviour
     void Update() {
 
         // Grow random ressources
-        foreach (GameObject child in childs) {
+        foreach (GameObject child in field_tiles) {
             child.GetComponent<field_tile>().grow(growth_speed * Time.deltaTime);
         }
 
@@ -61,7 +66,7 @@ public class field : MonoBehaviour
     }
 
     void harvest() {
-        foreach (GameObject child in childs) {
+        foreach (GameObject child in field_tiles) {
             child.GetComponent<field_tile>().harvest();
         }
     }

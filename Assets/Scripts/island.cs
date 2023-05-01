@@ -39,18 +39,17 @@ public class island : MonoBehaviour
 
     void harvest () {
         foreach (GameObject field in fields) {
-            foreach (Transform child in field.transform) {
-                if (child.GetComponent<field_tile>().harvestable) {
-                    if (child.name == "wheat") {
+            List<GameObject> field_tiles = field.GetComponent<field>().field_tiles;
+            foreach (GameObject tile in field_tiles) {
+                if (tile.GetComponent<field_tile>().harvestable) {
+                    if (tile.name == "wheat") {
                         weath += 1;
-                    } else if (child.name == "milk") {
+                    } else if (tile.name == "milk") {
                         milk += 1;
                     }
-                    child.GetComponent<field_tile>().harvest();
+                    tile.GetComponent<field_tile>().harvest();
                 }
             }
         }
     }
-
-    
 }
