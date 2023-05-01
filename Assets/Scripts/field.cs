@@ -6,7 +6,6 @@ public class field : MonoBehaviour
 {
     public GameObject ressource;
     public List<GameObject> field_tiles = new List<GameObject>();
-    public List<GameObject> cats = new List<GameObject>();
 
     // Basic growth and gather speed
     private float base_growth_speed = 0.1f;
@@ -29,8 +28,6 @@ public class field : MonoBehaviour
         {
             if (child.name == "wheat" || child.name == "milk")
                 field_tiles.Add(child.gameObject);
-            else if (child.name == "cat")
-                cats.Add(child.gameObject);
         }
 
         growth_speed = base_growth_speed;

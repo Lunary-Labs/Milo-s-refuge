@@ -9,6 +9,7 @@ public class boat : MonoBehaviour
     public GameObject island;
     private GameObject main_island_dock;
     private GameObject island_dock;
+    private Animator animator;
 
     private int max_stock = 10;
     private int stock = 0;
@@ -19,7 +20,7 @@ public class boat : MonoBehaviour
     private float dest_x;
     private float dest_y;
 
-    private float speed = 10;
+    private float speed = 1;
 
     public bool loading = false;
     public bool unloading = false;
@@ -33,6 +34,7 @@ public class boat : MonoBehaviour
         dest_y = main_island_dock.transform.position.y;
         character = GameObject.Find("character");
         island = transform.parent.gameObject;
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
