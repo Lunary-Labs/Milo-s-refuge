@@ -20,7 +20,7 @@ public class boat : MonoBehaviour
     private float dest_x;
     private float dest_y;
 
-    private float speed = 1;
+    private float speed = 5f;
 
     public bool loading = false;
     public bool unloading = false;

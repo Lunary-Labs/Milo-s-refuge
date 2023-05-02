@@ -1101,7 +1101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4097405454792798529}
   - component: {fileID: 4097405454792798530}
-  - component: {fileID: 4097405454792798557}
+  - component: {fileID: 8716398857381043942}
   m_Layer: 0
   m_Name: boat
   m_TagString: Untagged
@@ -1176,7 +1176,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4097405454792798557
+--- !u!114 &8716398857381043942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1189,10 +1189,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 0}
-  milk: 100
+  milk: 0
   wheat: 0
+  dest_x: 0
+  dest_y: 0
+  dest: main_island
   loading: 0
   unloading: 0
+  charge_time: 0
 --- !u!1 &4097405454852465990
 GameObject:
   m_ObjectHideFlags: 0
