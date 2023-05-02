@@ -2,22 +2,22 @@
     "recipe_list":[
         {
             "name": "flour",
-            "resource1": "wheat",
+            "ressource1": "wheat",
             "amount1": 3,
-            "resource2": "none",
+            "ressource2": "none",
             "amount2": 0,
-            "resource3": "none",
+            "ressource3": "none",
             "amount3": 0,
             "duration": 30,
             "price": 0
         },
         {
             "name": "bread",
-            "resource1": "flour",
+            "ressource1": "flour",
             "amount1": 2,
-            "resource2": "none",
+            "ressource2": "none",
             "amount2": 0,
-            "resource3": "none",
+            "ressource3": "none",
             "amount3": 0,
             "duration": 30,
             "price": 0

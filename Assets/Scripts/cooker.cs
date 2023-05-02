@@ -7,11 +7,11 @@ using UnityEngine;
 public class Recipe
 {
     public string name;
-    public string resource1;
+    public string ressource1;
     public int amount1;
-    public string resource2;
+    public string ressource2;
     public int amount2;
-    public string resource3;
+    public string ressource3;
     public int amount3;
     public float duration;
     public int price;
@@ -23,100 +23,74 @@ public class RecipeList {
 
 public class cooker : MonoBehaviour
 {
-    //recipe cooker
-    public string recipe_cooker_1;
-    // public string recipe_cooker_2;
-    // public string recipe_cooker_3;
-    
 
-    //timer cooker
-    private float timer_cooker_1;
-    private bool finish_cooker_1 = true;
-    private bool error_cooker_1 = false;
+    // Cookers recipes
+    public string recipe_cooker_1 = "";
 
-    // private float current_timer_duration_cooker_2;
-    // private float current_timer_cooker_2;
-    // private bool finish_cooker_2 = true;
-    // private float current_timer_duration_cooker_3;
-    // private float current_timer_cooker_3;
-    // private bool finish_cooker_2 = true;
+    // Cookers states
+    public bool cooker_1_started = false;
 
+    // Cookers timers
+    public float timer_cooker_1;
 
+    // Json recipe part
+    public RecipeList recipe_array;
+    Dictionary<string, Recipe> recipe_dict = new Dictionary<string, Recipe>();
 
-
-    //recipe json
-    private string recipe_file = "recipe.json";
-    public RecipeList recipeDataArray;
-    Dictionary<string, Recipe> recipeDataDict = new Dictionary<string, Recipe>();
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/" + recipe_file);
-        recipeDataArray = JsonUtility.FromJson<RecipeList>(json); 
-        foreach(Recipe recipeData in recipeDataArray.recipe_list)
-        {
-            recipeDataDict.Add(recipeData.name, recipeData);
-        }
-        Recipe test = recipeDataDict["bread"];
-
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(recipe_cooker_1 != "" && finish_cooker_1)
-        {
-            //Current needed ressources
-            List<string> recipe_ressources = get_recipe_ressources(recipe_cooker_1);
-
-
-            //Check if the player have enough ressources
-            Recipe r_cooker_1 = recipeDataDict[recipe_cooker_1];
-            if(r_cooker_1.amount1 > transform.GetComponent<character>().get_ressources(recipe_ressources[0])){
-                error_cooker_1 = true;
-            }
-            if(recipe_ressources.Count > 1){
-                if(r_cooker_1.amount2 < transform.GetComponent<character>().get_ressources(recipe_ressources[1]))
-                {
-                    error_cooker_1 = true;
-                }
-            }
-            if(recipe_ressources.Count > 2){
-                if(r_cooker_1.amount3 > transform.GetComponent<character>().get_ressources(recipe_ressources[2]))
-                {
-                    error_cooker_1 = true;
-                }
-            }
-
-
-            //current_timer_duration_cooker_1 = r_cooker_1.duration;
-            // if(current_timer_cooker_1 >= current_timer_duration_cooker_1){
-            //     current_timer_cooker_1 += time.deltaTime;
-            // }
+    void Start() {
+        string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");
+        recipe_array = JsonUtility.FromJson<RecipeList>(json); 
+        foreach (Recipe recipe_data in recipe_array.recipe_list) {
+            recipe_dict.Add(recipe_data.name, recipe_data);
         }
     }
 
-
-    //Get ressources from recipe 
-    //return List of ressources (string)
-    private List<string> get_recipe_ressources(Recipe _recipe){
-        List<string> ressources = new List<string>();
-        ressources.Add(_recipe.resource1);
-        if(_recipe.resource2 != "none")
-        {
-            ressources.Add(_recipe.resource2);
+    void Update() {
+        if (recipe_cooker_1 != "" && cooker_1_started) {
+            timer_cooker_1 += Time.deltaTime;
+            if (timer_cooker_1 >= recipe_dict[recipe_cooker_1].duration) {
+                timer_cooker_1 = 0;
+                cooker_1_started = false;
+                // TODO: give ressources to player
+            }
+        } else if (recipe_cooker_1 != "" && !cooker_1_started) {
+            Recipe r_cooker_1 = recipe_dict[recipe_cooker_1];
+            // we check if the player have enough ressources
+            bool enough_ressources = true;
+            if (r_cooker_1.amount1 > transform.GetComponent<character>().get_ressource(r_cooker_1.ressource1)) {
+                Debug.Log("quantité demandée : " + r_cooker_1.ressource1);
+                Debug.Log("quantitée du joueur : " + transform.GetComponent<character>().get_ressource(r_cooker_1.ressource1));
+                enough_ressources = false;
+            }
+            if (r_cooker_1.amount2 > transform.GetComponent<character>().get_ressource(r_cooker_1.ressource2)) {
+                enough_ressources = false;
+            }
+            if (r_cooker_1.amount3 > transform.GetComponent<character>().get_ressource(r_cooker_1.ressource3)) {                
+                enough_ressources = false;
+            }
+            if (enough_ressources) {
+                transform.GetComponent<character>().remove_ressource(r_cooker_1.ressource1, r_cooker_1.amount1);
+                transform.GetComponent<character>().remove_ressource(r_cooker_1.ressource2, r_cooker_1.amount2);
+                transform.GetComponent<character>().remove_ressource(r_cooker_1.ressource3, r_cooker_1.amount3);
+                cooker_1_started = true;
+            }
         }
-        if(_recipe.resource3 != "none")
-        {
-            ressources.Add(_recipe.resource3);
-        }
-        
-        return ressources;
+        if (Input.GetMouseButtonDown(0)) {
+                change_recipe_cooker_1("flour");
+            }
     }
-    
+
+    void change_recipe_cooker_1(string recipe) {
+        if (recipe_dict.ContainsKey(recipe)) {
+            recipe_cooker_1 = recipe;
+        }
+    }
+
+    void cancel_recipe_cooker_1() {
+        recipe_cooker_1 = "";
+        cooker_1_started = false;
+        timer_cooker_1 = 0;
+        //TODO : give back ressources
+    }
 }
 

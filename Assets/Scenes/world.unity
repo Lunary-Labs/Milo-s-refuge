@@ -379,6 +379,117 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1864563950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1864563953}
+  - component: {fileID: 1864563952}
+  - component: {fileID: 1864563951}
+  m_Layer: 0
+  m_Name: game_manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1864563951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864563950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf9fc9d5fdeb4248b4edc19fd297448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipe_cooker_1: 
+  cooker_1_started: 0
+  timer_cooker_1: 0
+--- !u!114 &1864563952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864563950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e75b62336856eb4b809c613b7f32e94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  wheat: 0
+  milk: 0
+  prestige: 0
+--- !u!4 &1864563953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864563950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.285334, y: 6.383125, z: 1800.7078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1980425003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980425005}
+  - component: {fileID: 1980425004}
+  m_Layer: 0
+  m_Name: cursor_controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1980425004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980425003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2538d68a7c0da684d832512638ba984d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor_texture: {fileID: 2800000, guid: a705706e19f5a914a8e63f40052e6e3a, type: 3}
+  pointing_texture: {fileID: 2800000, guid: 00f9bb37f1b7e9743930305a451fd3d4, type: 3}
+  clicking_texture: {fileID: 2800000, guid: a1f7d9f603280d3488045555ac300f4c, type: 3}
+--- !u!4 &1980425005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980425003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4889965, y: 1.0840962, z: 322.0469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7806537631852126206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,4 +555,5 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6091835450340973481, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+    - {fileID: 6592868212638920006, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
