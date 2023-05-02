@@ -4,6 +4,7 @@
 
 - [x] Basic wheat field (timer, harvesting, indicator, animation)   
 - [x] Boat that departs when full  
+- [ ] fix boat
 - [x] Simple design of a basic island  
 - [ ] First recipe (bread)
 - [x] Camera 

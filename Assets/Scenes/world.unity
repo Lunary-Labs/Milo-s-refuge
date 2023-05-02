@@ -203,6 +203,7 @@ GameObject:
   - component: {fileID: 1329534201}
   - component: {fileID: 1329534200}
   - component: {fileID: 1329534203}
+  - component: {fileID: 1329534204}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -245,7 +246,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.03
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -269,7 +270,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329534198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38, y: -10.5, z: -10}
+  m_LocalPosition: {x: 30.5, y: -22.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -286,6 +287,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 325e7de8bd4ce84468dd8babffd06140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1329534204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329534198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c515239685c6345a58c14d5e9f52b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1745397412
@@ -373,6 +386,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6091835450340973493, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6091835450340973493, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -18.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7806537632569708463, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -421,5 +442,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: world
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6091835450340973481, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
