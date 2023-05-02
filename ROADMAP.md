@@ -11,4 +11,7 @@
 - [ ] cooking
 - [x] Island upgrade (size)
 - [x] UI first page draft
+- [x] Camera drag/scroll
+- [x] Wheat field
+- [x] Auto/Manual collect
   

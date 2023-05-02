@@ -96,8 +96,8 @@ public class boat : MonoBehaviour
     }
 
     private void unload() {
-        character.GetComponent<character>().add_milk(milk);
-        character.GetComponent<character>().add_wheat(wheat);
+        // character.GetComponent<character>().add_milk(milk);
+        // character.GetComponent<character>().add_wheat(wheat);
         milk = 0;
         wheat = 0;
         stock = 0;

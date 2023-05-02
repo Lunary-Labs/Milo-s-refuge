@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4097405454852465985}
   - component: {fileID: 4097405454852465987}
+  - component: {fileID: 3974697326355058670}
   m_Layer: 0
   m_Name: main_island_lvl_1
   m_TagString: Untagged
@@ -49,6 +50,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &3974697326355058670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097405454852465990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baf9fc9d5fdeb4248b4edc19fd297448, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recipeData: {fileID: 0}
 --- !u!1 &4097405454939663184
 GameObject:
   m_ObjectHideFlags: 0

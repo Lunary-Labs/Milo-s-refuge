@@ -43,9 +43,5 @@ public class field_tile : MonoBehaviour
         harvestable = false;
         next_growth_timer = Random.Range(0f, 1f);
     }
-    
-    private void OnMouseDown()
-    {
-        this.harvest();
-    }
+
 }
