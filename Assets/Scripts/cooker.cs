@@ -15,6 +15,10 @@ public class Recipe
     public int amount3;
     public float duration;
     public int price;
+    public string path_sprite;
+    public string r_path_sprite_1;
+    public string r_path_sprite_2;
+    public string r_path_sprite_3;
 }
 
 public class RecipeList {
