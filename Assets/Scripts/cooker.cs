@@ -28,6 +28,8 @@ public class RecipeList {
 public class cooker : MonoBehaviour
 {
 
+    private character character_script;
+
     // Cookers recipes
     public string recipe_cooker_1 = "";
     public string recipe_cooker_2 = "";
@@ -53,6 +55,7 @@ public class cooker : MonoBehaviour
         foreach (Recipe recipe_data in recipe_array.recipe_list) {
             recipe_dict.Add(recipe_data.name, recipe_data);
         }
+        character_script = transform.GetComponent<character>();
     }
 
     void Update() {
@@ -62,25 +65,25 @@ public class cooker : MonoBehaviour
             if (timer_cooker_1 >= recipe_dict[recipe_cooker_1].duration) {
                 timer_cooker_1 = 0;
                 cooker_1_started = false;
-                // TODO: give ressources to player
+                character_script.add_finished_product(recipe_dict[recipe_cooker_1].name);
             }
         } else if (recipe_cooker_1 != "" && !cooker_1_started) {
             Recipe r_cooker_1 = recipe_dict[recipe_cooker_1];
             // we check if the player have enough ressources
             bool enough_ressources = true;
-            if (r_cooker_1.amount1 > transform.GetComponent<character>().get_ressource(r_cooker_1.ressource1)) {
+            if (r_cooker_1.amount1 > character_script.get_ressource(r_cooker_1.ressource1)) {
                 enough_ressources = false;
             }
-            if (r_cooker_1.amount2 > transform.GetComponent<character>().get_ressource(r_cooker_1.ressource2)) {
+            if (r_cooker_1.amount2 > character_script.get_ressource(r_cooker_1.ressource2)) {
                 enough_ressources = false;
             }
-            if (r_cooker_1.amount3 > transform.GetComponent<character>().get_ressource(r_cooker_1.ressource3)) {                
+            if (r_cooker_1.amount3 > character_script.get_ressource(r_cooker_1.ressource3)) {                
                 enough_ressources = false;
             }
             if (enough_ressources) {
-                transform.GetComponent<character>().change_ressource(r_cooker_1.ressource1, -r_cooker_1.amount1);
-                transform.GetComponent<character>().change_ressource(r_cooker_1.ressource2, -r_cooker_1.amount2);
-                transform.GetComponent<character>().change_ressource(r_cooker_1.ressource3, -r_cooker_1.amount3);
+                character_script.change_ressource(r_cooker_1.ressource1, -r_cooker_1.amount1);
+                character_script.change_ressource(r_cooker_1.ressource2, -r_cooker_1.amount2);
+                character_script.change_ressource(r_cooker_1.ressource3, -r_cooker_1.amount3);
                 cooker_1_started = true;
             }
         }
@@ -91,25 +94,25 @@ public class cooker : MonoBehaviour
             if (timer_cooker_2 >= recipe_dict[recipe_cooker_2].duration) {
                 timer_cooker_2 = 0;
                 cooker_2_started = false;
-                // TODO: give ressources to player
+                character_script.add_finished_product(recipe_dict[recipe_cooker_1].name);
             }
         } else if (recipe_cooker_2 != "" && !cooker_2_started) {
             Recipe r_cooker_2 = recipe_dict[recipe_cooker_2];
             // we check if the player have enough ressources
             bool enough_ressources = true;
-            if (r_cooker_2.amount1 > transform.GetComponent<character>().get_ressource(r_cooker_2.ressource1)) {
+            if (r_cooker_2.amount1 > character_script.get_ressource(r_cooker_2.ressource1)) {
                 enough_ressources = false;
             }
-            if (r_cooker_2.amount2 > transform.GetComponent<character>().get_ressource(r_cooker_2.ressource2)) {
+            if (r_cooker_2.amount2 > character_script.get_ressource(r_cooker_2.ressource2)) {
                 enough_ressources = false;
             }
-            if (r_cooker_2.amount3 > transform.GetComponent<character>().get_ressource(r_cooker_2.ressource3)) {                
+            if (r_cooker_2.amount3 > character_script.get_ressource(r_cooker_2.ressource3)) {                
                 enough_ressources = false;
             }
             if (enough_ressources) {
-                transform.GetComponent<character>().change_ressource(r_cooker_2.ressource1, -r_cooker_2.amount1);
-                transform.GetComponent<character>().change_ressource(r_cooker_2.ressource2, -r_cooker_2.amount2);
-                transform.GetComponent<character>().change_ressource(r_cooker_2.ressource3, -r_cooker_2.amount3);
+                character_script.change_ressource(r_cooker_2.ressource1, -r_cooker_2.amount1);
+                character_script.change_ressource(r_cooker_2.ressource2, -r_cooker_2.amount2);
+                character_script.change_ressource(r_cooker_2.ressource3, -r_cooker_2.amount3);
                 cooker_2_started = true;
             }
         }
@@ -120,25 +123,25 @@ public class cooker : MonoBehaviour
             if (timer_cooker_3 >= recipe_dict[recipe_cooker_3].duration) {
                 timer_cooker_3 = 0;
                 cooker_3_started = false;
-                // TODO: give ressources to player
+                character_script.add_finished_product(recipe_dict[recipe_cooker_1].name);
             }
         } else if (recipe_cooker_3 != "" && !cooker_3_started) {
             Recipe r_cooker_3 = recipe_dict[recipe_cooker_3];
             // we check if the player have enough ressources
             bool enough_ressources = true;
-            if (r_cooker_3.amount1 > transform.GetComponent<character>().get_ressource(r_cooker_3.ressource1)) {
+            if (r_cooker_3.amount1 > character_script.get_ressource(r_cooker_3.ressource1)) {
                 enough_ressources = false;
             }
-            if (r_cooker_3.amount2 > transform.GetComponent<character>().get_ressource(r_cooker_3.ressource2)) {
+            if (r_cooker_3.amount2 > character_script.get_ressource(r_cooker_3.ressource2)) {
                 enough_ressources = false;
             }
-            if (r_cooker_3.amount3 > transform.GetComponent<character>().get_ressource(r_cooker_3.ressource3)) {                
+            if (r_cooker_3.amount3 > character_script.get_ressource(r_cooker_3.ressource3)) {                
                 enough_ressources = false;
             }
             if (enough_ressources) {
-                transform.GetComponent<character>().change_ressource(r_cooker_3.ressource1, -r_cooker_3.amount1);
-                transform.GetComponent<character>().change_ressource(r_cooker_3.ressource2, -r_cooker_3.amount2);
-                transform.GetComponent<character>().change_ressource(r_cooker_3.ressource3, -r_cooker_3.amount3);
+                character_script.change_ressource(r_cooker_3.ressource1, -r_cooker_3.amount1);
+                character_script.change_ressource(r_cooker_3.ressource2, -r_cooker_3.amount2);
+                character_script.change_ressource(r_cooker_3.ressource3, -r_cooker_3.amount3);
                 cooker_3_started = true;
             }
         }
@@ -175,9 +178,9 @@ public class cooker : MonoBehaviour
         //TODO : give back ressources
         Recipe r_cooker_1 = recipe_dict[recipe_cooker_1];
         if (cooker_1_started) {
-            transform.GetComponent<character>().change_ressource(r_cooker_1.ressource1, r_cooker_1.amount1);
-            transform.GetComponent<character>().change_ressource(r_cooker_1.ressource2, r_cooker_1.amount2);
-            transform.GetComponent<character>().change_ressource(r_cooker_1.ressource3, r_cooker_1.amount3);
+            character_script.change_ressource(r_cooker_1.ressource1, r_cooker_1.amount1);
+            character_script.change_ressource(r_cooker_1.ressource2, r_cooker_1.amount2);
+            character_script.change_ressource(r_cooker_1.ressource3, r_cooker_1.amount3);
         }
         recipe_cooker_1 = "";
         cooker_1_started = false;
@@ -187,9 +190,9 @@ public class cooker : MonoBehaviour
     void cancel_recipe_cooker_2() {
         Recipe r_cooker_2 = recipe_dict[recipe_cooker_2];
         if (cooker_2_started) {
-            transform.GetComponent<character>().change_ressource(r_cooker_2.ressource1, r_cooker_2.amount1);
-            transform.GetComponent<character>().change_ressource(r_cooker_2.ressource2, r_cooker_2.amount2);
-            transform.GetComponent<character>().change_ressource(r_cooker_2.ressource3, r_cooker_2.amount3);
+            character_script.change_ressource(r_cooker_2.ressource1, r_cooker_2.amount1);
+            character_script.change_ressource(r_cooker_2.ressource2, r_cooker_2.amount2);
+            character_script.change_ressource(r_cooker_2.ressource3, r_cooker_2.amount3);
         }
         recipe_cooker_2 = "";
         cooker_2_started = false;
@@ -199,9 +202,9 @@ public class cooker : MonoBehaviour
     void cancel_recipe_cooker_3() {
         Recipe r_cooker_3 = recipe_dict[recipe_cooker_3];
         if (cooker_3_started) {
-            transform.GetComponent<character>().change_ressource(r_cooker_3.ressource1, r_cooker_3.amount1);
-            transform.GetComponent<character>().change_ressource(r_cooker_3.ressource2, r_cooker_3.amount2);
-            transform.GetComponent<character>().change_ressource(r_cooker_3.ressource3, r_cooker_3.amount3);
+            character_script.change_ressource(r_cooker_3.ressource1, r_cooker_3.amount1);
+            character_script.change_ressource(r_cooker_3.ressource2, r_cooker_3.amount2);
+            character_script.change_ressource(r_cooker_3.ressource3, r_cooker_3.amount3);
         }
         recipe_cooker_3 = "";
         cooker_2_started = false;

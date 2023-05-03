@@ -36,9 +36,17 @@ public class character : MonoBehaviour
     public int flour = 0;
     public int sugar = 0;
 
-    public void change_ressource(string ressource_name, int amount){
-        switch (ressource_name)
-        {
+     // Finished products values
+    enum finished_product {
+        bread = 10,
+        cake = 20,
+        cheese = 30,
+        pumpkin_soup = 40,
+        radish_salad = 50,
+    }
+
+    public void change_ressource (string ressource_name, int amount) {    
+        switch (ressource_name) {
             // switch case for all ressources
             case "gold":
                 gold += amount;
@@ -108,18 +116,59 @@ public class character : MonoBehaviour
         }
     }
 
-    public int get_ressource(string ressource_name){
-        switch (ressource_name)
-        {
+     public int get_ressource (string ressource_name) {
+        switch (ressource_name) {
             case "gold":
                 return gold;
             case "wheat":
                 return wheat;
+            case "carrot":
+                return carrot;
+            case "tomato":
+                return tomato;
+            case "corn":
+                return corn;
+            case "eggplant":
+                return eggplant;
+            case "cabbage":
+                return cabbage;
+            case "salad":   
+                return salad;
+            case "pumpkin":
+                return pumpkin;
+            case "pickle":  
+                return pickle;
+            case "radish":  
+                return radish;
+            case "sugar_cane":
+                return sugar_cane;
             case "milk":
                 return milk;
+                return milk;    
+            case "eggs":   
+                return eggs;
+            case "wool":
+                return wool;
+            case "honey":
+                return honey;
+            case "wood":
+                return wood;
+            case "stone":  
+                return stone;
+            case "iron":
+                return iron;
+            case "flour":
+                return flour;
+            case "sugar":
+                return sugar;
             default:
                 return 0;
         }
+    }
+
+    public void add_finished_product (string product) {
+        // get value from enum with product string
+        gold += (int)System.Enum.Parse(typeof(finished_product), product);
     }
 }
 
