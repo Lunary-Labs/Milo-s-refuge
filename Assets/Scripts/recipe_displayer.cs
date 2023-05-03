@@ -17,8 +17,6 @@ public class recipe_displayer : MonoBehaviour
             GameObject new_recipe = Instantiate(recipe_prefab, transform);    
             display_recipe_image = new_recipe.transform.Find("display_recipe_image").GetComponent<Image>();
             display_recipe_image.sprite = Resources.Load<Sprite>(Application.dataPath + recipe_data.path_sprite);
-            Debug.Log("Nique ta mère avec t'es POH ");
-
         }
     }
 
