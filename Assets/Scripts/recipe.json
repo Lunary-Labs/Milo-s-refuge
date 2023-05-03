@@ -11,8 +11,8 @@
             "amount3": 0,
             "duration": 30,
             "price": 0,
-            "path_sprite" : "Assets/Assets/food/103_flour_sac.png",
-            "r_path_sprite_1":"Assets/Assets/sprout_land/Objects/wheat_asset.png",
+            "path_sprite" : "/Assets/food/103_flour_sac.png",
+            "r_path_sprite_1":"/Assets/sprout_land/Objects/wheat_asset.png",
             "r_path_sprite_2":"",
             "r_path_sprite_3":""
         },
@@ -27,8 +27,8 @@
             "amount3": 0,
             "duration": 30,
             "price": 0,
-            "path_sprite" : "Assets/Assets/food/07_bread.png",
-            "r_path_sprite_1":"Assets/Assets/food/103_flour_sac.png",
+            "path_sprite" : "/Assets/food/07_bread.png",
+            "r_path_sprite_1":"/Assets/food/103_flour_sac.png",
             "r_path_sprite_2":"",
             "r_path_sprite_3":""
         }
