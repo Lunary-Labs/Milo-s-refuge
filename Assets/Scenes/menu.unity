@@ -1207,8 +1207,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280894309
-  m_fontColor: {r: 0.39607844, g: 0.2627451, b: 0.16078432, a: 1}
+    rgba: 4284053930
+  m_fontColor: {r: 0.6666667, g: 0.47450984, b: 0.34901962, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1422,7 +1422,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6592868212638920006, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
 --- !u!1 &1841920591
 GameObject:

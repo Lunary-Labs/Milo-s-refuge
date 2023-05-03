@@ -116,7 +116,7 @@ public class character : MonoBehaviour
         }
     }
 
-     public int get_ressource (string ressource_name) {
+    public int get_ressource (string ressource_name) {
         switch (ressource_name) {
             case "gold":
                 return gold;
@@ -143,7 +143,6 @@ public class character : MonoBehaviour
             case "sugar_cane":
                 return sugar_cane;
             case "milk":
-                return milk;
                 return milk;    
             case "eggs":   
                 return eggs;
@@ -166,9 +165,12 @@ public class character : MonoBehaviour
         }
     }
 
-    public void add_finished_product (string product) {
-        // get value from enum with product string
-        gold += (int)System.Enum.Parse(typeof(finished_product), product);
+    public void choose_add(string product, string reward) {
+        if (reward == "gold") {
+            gold += (int)System.Enum.Parse(typeof(finished_product), product);
+        } else {
+            change_ressource(product, 1);
+        }
     }
 }
 

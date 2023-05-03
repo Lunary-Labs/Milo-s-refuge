@@ -7,6 +7,7 @@ using UnityEngine;
 public class Recipe
 {
     public string name;
+    public string reward;
     public string ressource1;
     public int amount1;
     public string ressource2;
@@ -65,7 +66,7 @@ public class cooker : MonoBehaviour
             if (timer_cooker_1 >= recipe_dict[recipe_cooker_1].duration) {
                 timer_cooker_1 = 0;
                 cooker_1_started = false;
-                character_script.add_finished_product(recipe_dict[recipe_cooker_1].name);
+                character_script.choose_add(recipe_dict[recipe_cooker_1].name, recipe_dict[recipe_cooker_1].reward);
             }
         } else if (recipe_cooker_1 != "" && !cooker_1_started) {
             Recipe r_cooker_1 = recipe_dict[recipe_cooker_1];
@@ -94,7 +95,7 @@ public class cooker : MonoBehaviour
             if (timer_cooker_2 >= recipe_dict[recipe_cooker_2].duration) {
                 timer_cooker_2 = 0;
                 cooker_2_started = false;
-                character_script.add_finished_product(recipe_dict[recipe_cooker_1].name);
+                character_script.choose_add(recipe_dict[recipe_cooker_2].name, recipe_dict[recipe_cooker_2].reward);
             }
         } else if (recipe_cooker_2 != "" && !cooker_2_started) {
             Recipe r_cooker_2 = recipe_dict[recipe_cooker_2];
@@ -123,7 +124,7 @@ public class cooker : MonoBehaviour
             if (timer_cooker_3 >= recipe_dict[recipe_cooker_3].duration) {
                 timer_cooker_3 = 0;
                 cooker_3_started = false;
-                character_script.add_finished_product(recipe_dict[recipe_cooker_1].name);
+                character_script.choose_add(recipe_dict[recipe_cooker_3].name, recipe_dict[recipe_cooker_3].reward);
             }
         } else if (recipe_cooker_3 != "" && !cooker_3_started) {
             Recipe r_cooker_3 = recipe_dict[recipe_cooker_3];

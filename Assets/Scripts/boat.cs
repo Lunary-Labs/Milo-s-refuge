@@ -5,23 +5,45 @@ using UnityEngine;
 public class boat : MonoBehaviour
 {
     private GameObject character;
-
     public GameObject island;
     private GameObject main_island_dock;
     private GameObject island_dock;
     private Animator animator;
 
+    // Boat caracteristics
     private int max_stock = 10;
     private int stock = 0;
+    private float speed = 5f;
 
-    public int milk = 0;
+    // ressources
     public int wheat = 0;
+    public int carrot = 0;
+    public int tomato = 0;
+    public int corn = 0;
+    public int eggplant = 0;
+    public int cabbage = 0;
+    public int salad = 0;
+    public int pumpkin = 0;
+    public int pickle = 0;
+    public int radish = 0;
+    public int sugar_cane = 0;
 
+    // animals
+    public int milk = 0;
+    public int eggs = 0;
+    public int wool = 0;
+    public int honey = 0;
+
+    // materials
+    public int wood = 0;
+    public int stone = 0;
+    public int iron = 0;
+
+    // next destination position
     private float dest_x;
     private float dest_y;
 
-    private float speed = 5f;
-
+    // Loading/Unloading variables
     public bool loading = false;
     public bool unloading = false;
     private float charge_time = 0f;
@@ -30,9 +52,12 @@ public class boat : MonoBehaviour
     void Start() {
         main_island_dock = GameObject.Find("main_island_dock");
         island_dock = transform.parent.gameObject.transform.Find("dock").gameObject;
+
         dest_x = main_island_dock.transform.position.x;
         dest_y = main_island_dock.transform.position.y;
+
         character = GameObject.Find("character");
+
         island = transform.parent.gameObject;
         animator = GetComponent<Animator>();
     }
