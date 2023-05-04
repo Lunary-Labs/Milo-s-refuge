@@ -146,31 +146,31 @@ public class cooker : MonoBehaviour
                 cooker_3_started = true;
             }
         }
-
-        // test clicks
-        if (Input.GetMouseButtonDown(0)) {
-            change_recipe_cooker_1("flour");
-        }
-
-        if (Input.GetMouseButtonDown(1)) {
-            cancel_recipe_cooker_1();
-        }
     }
 
-    void change_recipe_cooker_1(string recipe) {
+    public void change_recipe_cooker_1(string recipe) {
         if (recipe_dict.ContainsKey(recipe)) {
+            if (recipe_cooker_1 != "") {
+                cancel_recipe_cooker_1();
+            }
             recipe_cooker_1 = recipe;
         }
     }
 
-    void change_recipe_cooker_2(string recipe) {
+    public void change_recipe_cooker_2(string recipe) {
         if (recipe_dict.ContainsKey(recipe)) {
+            if (recipe_cooker_2 != "") {
+                cancel_recipe_cooker_2();
+            }
             recipe_cooker_2 = recipe;
         }
     }
 
-    void change_recipe_cooker_3(string recipe) {
+    public void change_recipe_cooker_3(string recipe) {
         if (recipe_dict.ContainsKey(recipe)) {
+            if (recipe_cooker_3 != "") {
+                cancel_recipe_cooker_3();
+            }
             recipe_cooker_2 = recipe;
         }
     }
