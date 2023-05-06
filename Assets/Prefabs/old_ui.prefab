@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8000765254840115499}
   - component: {fileID: 8000765254840115476}
   m_Layer: 5
-  m_Name: Close
+  m_Name: close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,8 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578bc735d4722ed4b87029bd1f8d8457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recipe_prefab: {fileID: 7938832587734965300, guid: 8ea74949af31efa49abe82e80f836d82, type: 3}
-  display_recipe_image: {fileID: 0}
+  recipe_prefab: {fileID: 7699130190780399495, guid: 08e0aeef3e0a4a849bad5e86bd04e875, type: 3}
 --- !u!1 &8000765255505047788
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +373,7 @@ GameObject:
   - component: {fileID: 8000765255529452672}
   - component: {fileID: 8000765255529452673}
   m_Layer: 5
-  m_Name: Close
+  m_Name: close
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -963,6 +962,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8000765255024872872}
+        m_TargetAssemblyTypeName: recipe_displayer, Assembly-CSharp
+        m_MethodName: create_recipe_list_ui
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8000765255949761276}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8000765255999366409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1023,7 @@ GameObject:
   - component: {fileID: 8000765256148785688}
   - component: {fileID: 8000765256148785689}
   m_Layer: 5
-  m_Name: inGame_UI
+  m_Name: old_ui
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
