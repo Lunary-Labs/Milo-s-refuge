@@ -48,7 +48,7 @@ public class cooker : MonoBehaviour
 
     // Json recipe part
     public RecipeList recipe_array;
-    Dictionary<string, Recipe> recipe_dict = new Dictionary<string, Recipe>();
+    public Dictionary<string, Recipe> recipe_dict = new Dictionary<string, Recipe>();
 
     void Start() {
         string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");

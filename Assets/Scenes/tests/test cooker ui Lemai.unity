@@ -349,7 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c515239685c6345a58c14d5e9f52b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &1702411220
+--- !u!1001 &1470765102
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -442,10 +442,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502059006371738325, guid: d9dcb7e7e3846234e816db2f540a7905, type: 3}
       propertyPath: m_Name
-      value: ui_recipe_displayer (5)
+      value: ui_recipe_displayer
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8979555851659070769, guid: d9dcb7e7e3846234e816db2f540a7905, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9dcb7e7e3846234e816db2f540a7905, type: 3}
 --- !u!1 &1745397412
 GameObject:

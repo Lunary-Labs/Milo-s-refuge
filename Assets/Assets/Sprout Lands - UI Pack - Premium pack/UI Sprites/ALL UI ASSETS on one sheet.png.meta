@@ -197,7 +197,7 @@ TextureImporter:
         width: 4
         height: 4
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -218,7 +218,7 @@ TextureImporter:
         width: 24
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -226,6 +226,90 @@ TextureImporter:
       bones: []
       spriteID: 271d0836d570a6447a277c1ababa7ad4
       internalID: -262523721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_6
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 594
+        width: 35
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4e27e3d60c0fd499d1e7224a3c52a1
+      internalID: -1881745952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_7
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 597
+        width: 30
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06a4b88ab0a80b45a348eee12194399
+      internalID: -676721416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_8
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 610
+        width: 99
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6865dd30412a3c409cfea1fc0fced2a
+      internalID: -2133551123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_9
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 625
+        width: 99
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4a8b8964c68854da199b9fa9576c5a
+      internalID: 1047854026
       vertices: []
       indices: 
       edges: []
@@ -247,6 +331,10 @@ TextureImporter:
       ALL UI ASSETS on one sheet_3: 701322937
       ALL UI ASSETS on one sheet_4: 1337193950
       ALL UI ASSETS on one sheet_5: -262523721
+      ALL UI ASSETS on one sheet_6: -1881745952
+      ALL UI ASSETS on one sheet_7: -676721416
+      ALL UI ASSETS on one sheet_8: -2133551123
+      ALL UI ASSETS on one sheet_9: 1047854026
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
