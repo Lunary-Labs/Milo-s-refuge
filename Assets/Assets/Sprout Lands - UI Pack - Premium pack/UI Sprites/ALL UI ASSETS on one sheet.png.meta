@@ -155,7 +155,7 @@ TextureImporter:
         width: 14
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -163,6 +163,69 @@ TextureImporter:
       bones: []
       spriteID: f48abe2572ba493459caa3a70701e19d
       internalID: -92516803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_3
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 747
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13823f1840b58db46b9a5d79e4c926a9
+      internalID: 701322937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 743
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b45bb890794e242a941604af77d1a8
+      internalID: 1337193950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ALL UI ASSETS on one sheet_5
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 723
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271d0836d570a6447a277c1ababa7ad4
+      internalID: -262523721
       vertices: []
       indices: 
       edges: []
@@ -181,6 +244,9 @@ TextureImporter:
       ALL UI ASSETS on one sheet_0: 506119040
       ALL UI ASSETS on one sheet_1: 422859827
       ALL UI ASSETS on one sheet_2: -92516803
+      ALL UI ASSETS on one sheet_3: 701322937
+      ALL UI ASSETS on one sheet_4: 1337193950
+      ALL UI ASSETS on one sheet_5: -262523721
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

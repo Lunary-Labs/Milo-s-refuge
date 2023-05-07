@@ -9,12 +9,15 @@ public class choose_recipe_button : MonoBehaviour
     public string cooker_name;
     public GameObject game_controller;
     public GameObject close;
+    public GameObject displayer;
+    public cooker_displayer displayer_script;
 
     void Start () {
         recipe_name = transform.name;
         cooker_name = transform.parent.name;
         game_controller = GameObject.Find("game_manager");
         close = GameObject.Find("close");
+        displayer = transform.parent.parent.parent.parent.Find("cooker_ui").Find("Viewport").Find("Content").gameObject;
     }
 
     public void on_click() {
@@ -32,6 +35,10 @@ public class choose_recipe_button : MonoBehaviour
             default:
                 break;
         }
+        
+        displayer_script = displayer.GetComponent<cooker_displayer>();
+        displayer_script.display_cooker();
+
         close.GetComponent<Button>().onClick.Invoke();
     }
 }
