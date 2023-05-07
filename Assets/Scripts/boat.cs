@@ -11,33 +11,33 @@ public class boat : MonoBehaviour
     private Animator animator;
 
     // Boat caracteristics
-    private int max_stock = 10;
-    private int stock = 0;
-    private float speed = 5f;
+    public int max_stock = 10;
+    public int stock = 0;
+    private float speed = 10f;
 
     // ressources
-    public int wheat = 0;
-    public int carrot = 0;
-    public int tomato = 0;
-    public int corn = 0;
-    public int eggplant = 0;
-    public int cabbage = 0;
-    public int salad = 0;
-    public int pumpkin = 0;
-    public int pickle = 0;
-    public int radish = 0;
-    public int sugar_cane = 0;
+    private int wheat = 0;
+    private int carrot = 0;
+    private int tomato = 0;
+    private int corn = 0;
+    private int eggplant = 0;
+    private int cabbage = 0;
+    private int salad = 0;
+    private int pumpkin = 0;
+    private int pickle = 0;
+    private int radish = 0;
+    private int sugar_cane = 0;
 
     // animals
-    public int milk = 0;
-    public int eggs = 0;
-    public int wool = 0;
-    public int honey = 0;
+    private int milk = 0;
+    private int eggs = 0;
+    private int wool = 0;
+    private int honey = 0;
 
     // materials
-    public int wood = 0;
-    public int stone = 0;
-    public int iron = 0;
+    private int wood = 0;
+    private int stone = 0;
+    private int iron = 0;
 
     // next destination position
     public float dest_x;
@@ -70,6 +70,8 @@ public class boat : MonoBehaviour
                 loading = false;
                 unloading = false;
                 charge_time = 0f;
+                animator.SetBool("docked", false);
+                animator.SetBool("moving", true);
             }
         }
     }
@@ -88,7 +90,7 @@ public class boat : MonoBehaviour
                     dest_x = island_dock.transform.position.x;
                     dest_y = island_dock.transform.position.y;
                     unload();
-                } else if (dest_x == island_dock.transform.position.x && dest_y == island_dock.transform.position.y) {
+                } else if (Mathf.Abs(dest_x - island_dock.transform.position.x) < 0.1 && Mathf.Abs(dest_y - island_dock.transform.position.y) < 0.1) {
                     dest_x = main_island_dock.transform.position.x;
                     dest_y = main_island_dock.transform.position.y;
                     load();
@@ -101,7 +103,8 @@ public class boat : MonoBehaviour
     // probably going to use a dictionary, but all scripts involving ressources will need to be changed
     private void load() {
         int total_island_ressources = island.GetComponent<island>().total_island_ressources;
-
+        animator.SetBool("docked", true);
+        animator.SetBool("moving", false);
         while (stock < max_stock && total_island_ressources > 0) {
             if (island.GetComponent<island>().wheat > 0) {
                 wheat += 1;
@@ -213,9 +216,17 @@ public class boat : MonoBehaviour
             }
         }
         loading = true;
+        float boxes = 0;
+        if (stock != 0) {
+            boxes = (int)((float)stock / max_stock * 2) + 1;
+        }
+        animator.SetInteger("boxes", (int)boxes);
     }
 
     private void unload() {
+        animator.SetBool("docked", true);
+        animator.SetBool("moving", false);
+        animator.SetInteger("boxes", 0);
         game_manager.GetComponent<character>().change_ressource("wheat", wheat);
         game_manager.GetComponent<character>().change_ressource("carrot", carrot);
         game_manager.GetComponent<character>().change_ressource("tomato", tomato);

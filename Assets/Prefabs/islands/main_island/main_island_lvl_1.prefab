@@ -63,8 +63,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recipe_cooker_1: 
+  recipe_cooker_2: 
+  recipe_cooker_3: 
   cooker_1_started: 0
+  cooker_2_started: 0
+  cooker_3_started: 0
   timer_cooker_1: 0
+  timer_cooker_2: 0
+  timer_cooker_3: 0
 --- !u!1 &4097405454939663184
 GameObject:
   m_ObjectHideFlags: 0
@@ -6947,7 +6953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5096858126243294805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52, y: -5.14, z: 0}
+  m_LocalPosition: {x: 0.42, y: -5.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

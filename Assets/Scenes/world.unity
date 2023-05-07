@@ -642,6 +642,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6091835450264260532, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+      propertyPath: wheat
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6091835450340973493, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12
