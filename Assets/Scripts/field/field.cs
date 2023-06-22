@@ -14,7 +14,7 @@ public class field : MonoBehaviour
     private float growth_speed;
     private float gather_speed;
 
-    private bool auto_harvest = true;
+    private bool auto_harvest = false;
 
     // Auto harvest timer
     private float next_harvest_timer = 0f;
@@ -30,8 +30,7 @@ public class field : MonoBehaviour
     private float fed_time_remaining = 0f;
 
     void Start() {
-        foreach (Transform child in transform)
-        {
+        foreach (Transform child in transform) {
             if (child.name == "wheat" || child.name == "milk")
                 field_tiles.Add(child.gameObject);
         }
