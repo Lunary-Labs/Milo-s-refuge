@@ -1274,10 +1274,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 0}
-  milk: 100
-  wheat: 0
+  max_stock: 10
+  stock: 0
+  dest_x: 0
+  dest_y: 0
   loading: 0
   unloading: 0
+  charge_time: 0
+  charge_timer: 2
 --- !u!1 &2099729064599697433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1991,8 +1995,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fields: []
   cats: []
-  weath: 0
+  wheat: 0
+  carrot: 0
+  tomato: 0
+  corn: 0
+  eggplant: 0
+  cabbage: 0
+  salad: 0
+  pumpkin: 0
+  pickle: 0
+  radish: 0
+  sugar_cane: 0
   milk: 0
+  eggs: 0
+  wool: 0
+  honey: 0
+  wood: 0
+  stone: 0
+  iron: 0
+  total_island_ressources: 0
 --- !u!1 &3624185424805228303
 GameObject:
   m_ObjectHideFlags: 0

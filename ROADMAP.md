@@ -16,6 +16,14 @@
 - [x] Wheat field
 - [x] Auto/Manual collect
 
+## REFACTOR  
+
+Need to rewrite parts of the code to remove excess amount of variables :  
+- [ ] Boat ressource handling  
+- [ ] Island ressource handling   
+- [ ] Character ressource handling  
+- [ ] Cookers  
+
 ## 2nd step
 
 - [ ] In game UI  
@@ -27,11 +35,9 @@
 - [ ] harvest pop up (+1 wheat for example)  
 - [ ] missions  
   
-
 ## 3rd step  
 
 - [ ] Save/Load  
-- [ ] Change way ressources are handled with dict (remove code with multiple if or switch cases)  
 
 ## 4th step  
 

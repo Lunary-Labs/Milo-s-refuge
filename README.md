@@ -1,6 +1,5 @@
 # Milo's-refuge
 
-
 Milo is a cat who wants to create a haven of peace for cats. He will bring in more and more cats.  
 His feline friends will gather resources in a peaceful world and prepare food to sell to expand the refuge, explore new lands, and evolve their refuge.  
 It's a farming game that consists of fields on different islands. Each island has special characteristics and can accommodate different types of plants and animals.   
