@@ -4,8 +4,7 @@ using System.IO;
 using UnityEngine;
 [System.Serializable]
 
-public class Recipe
-{
+public class Recipe {
     public string name;
     public string reward;
     public string ressource1;
@@ -26,31 +25,37 @@ public class RecipeList {
     public List<Recipe> recipe_list;
 }
 
-public class cooker : MonoBehaviour
-{
+public class Cooker {
+    public string recipe;
+    public float timer;
+    public bool started;
+}
 
-    private character character_script;
+public class cooker : MonoBehaviour {
+    public character character_script;
 
-    // Cookers recipes
+    public List<Cooker> cookers = new List<Cooker>();
+    public int cooker_amount = 3;
+
+    // Debug display in inspector
     public string recipe_cooker_1 = "";
-    public string recipe_cooker_2 = "";
-    public string recipe_cooker_3 = "";
-
-    // Cookers states
     public bool cooker_1_started = false;
-    public bool cooker_2_started = false;
-    public bool cooker_3_started = false;
-
-    // Cookers timers
     public float timer_cooker_1;
-    public float timer_cooker_2;
-    public float timer_cooker_3;
 
     // Json recipe part
     public RecipeList recipe_array;
     public Dictionary<string, Recipe> recipe_dict = new Dictionary<string, Recipe>();
 
     void Start() {
+        // Add each cooker to cookers list
+        for (int i = 0; i < cooker_amount; i++) {
+            Cooker cooker = new Cooker();
+            cooker.recipe = "";
+            cooker.timer = 0;
+            cooker.started = false;
+            cookers.Add(cooker);
+        }
+
         string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");
         recipe_array = JsonUtility.FromJson<RecipeList>(json); 
         foreach (Recipe recipe_data in recipe_array.recipe_list) {
@@ -60,157 +65,74 @@ public class cooker : MonoBehaviour
     }
 
     void Update() {
-        // Cooker 1
-        if (recipe_cooker_1 != "" && cooker_1_started) {
-            timer_cooker_1 += Time.deltaTime;
-            if (timer_cooker_1 >= recipe_dict[recipe_cooker_1].duration) {
-                timer_cooker_1 = 0;
-                cooker_1_started = false;
-                character_script.choose_add(recipe_dict[recipe_cooker_1].name, recipe_dict[recipe_cooker_1].reward);
+        // Debug display in inspector
+        recipe_cooker_1 = cookers[0].recipe;
+        cooker_1_started = cookers[0].started;
+        timer_cooker_1 = cookers[0].timer;
+
+        foreach (Cooker cooker in cookers) {
+            if (!cooker.started && cooker.recipe != "") {
+                Recipe r = recipe_dict[cooker.recipe];
+                // we check if the player have enough ressources
+                bool enough_ressources = true;
+                if (r.ressource1 != "   ") {
+                    if (r.amount1 > character_script.get_ressource(r.ressource1)) {
+                        enough_ressources = false;
+                    }
+                }
+                if (r.ressource2 != "none") {
+                    if (r.amount2 > character_script.get_ressource(r.ressource2)) {
+                        enough_ressources = false;
+                    }
+                }
+                if (r.ressource3 != "none") {
+                    if (r.amount3 > character_script.get_ressource(r.ressource3)) {                
+                        enough_ressources = false;
+                    }
+                }
+                if (enough_ressources) {
+                    if (r.ressource1 != "none")
+                        character_script.change_ressource(r.ressource1, -r.amount1);
+                    if (r.ressource2 != "none")
+                        character_script.change_ressource(r.ressource2, -r.amount2);
+                    if (r.ressource3 != "none")
+                        character_script.change_ressource(r.ressource3, -r.amount3);
+                    cooker.started = true;
+                }
             }
-        } else if (recipe_cooker_1 != "" && !cooker_1_started) {
-            Recipe r_cooker_1 = recipe_dict[recipe_cooker_1];
-            // we check if the player have enough ressources
-            bool enough_ressources = true;
-            if (r_cooker_1.amount1 > character_script.get_ressource(r_cooker_1.ressource1)) {
-                enough_ressources = false;
-            }
-            if (r_cooker_1.amount2 > character_script.get_ressource(r_cooker_1.ressource2)) {
-                enough_ressources = false;
-            }
-            if (r_cooker_1.amount3 > character_script.get_ressource(r_cooker_1.ressource3)) {                
-                enough_ressources = false;
-            }
-            if (enough_ressources) {
-                character_script.change_ressource(r_cooker_1.ressource1, -r_cooker_1.amount1);
-                character_script.change_ressource(r_cooker_1.ressource2, -r_cooker_1.amount2);
-                character_script.change_ressource(r_cooker_1.ressource3, -r_cooker_1.amount3);
-                cooker_1_started = true;
-            }
+
+            // If the cooker is started, we increment the timer and craft the recipe if the timer is finished
+            if (cooker.started) {
+                cooker.timer += Time.deltaTime;
+                if (cooker.timer >= recipe_dict[cooker.recipe].duration) {
+                    cooker.timer = 0;
+                    cooker.started = false;
+                    character_script.choose_add(cooker.recipe, recipe_dict[cooker.recipe].reward);
+                }
+            } 
         }
-
-        // Cooker 2
-        if (recipe_cooker_2 != "" && cooker_2_started) {
-            timer_cooker_2 += Time.deltaTime;
-            if (timer_cooker_2 >= recipe_dict[recipe_cooker_2].duration) {
-                timer_cooker_2 = 0;
-                cooker_2_started = false;
-                character_script.choose_add(recipe_dict[recipe_cooker_2].name, recipe_dict[recipe_cooker_2].reward);
-            }
-        } else if (recipe_cooker_2 != "" && !cooker_2_started) {
-            Recipe r_cooker_2 = recipe_dict[recipe_cooker_2];
-            // we check if the player have enough ressources
-            bool enough_ressources = true;
-            if (r_cooker_2.amount1 > character_script.get_ressource(r_cooker_2.ressource1)) {
-                enough_ressources = false;
-            }
-            if (r_cooker_2.amount2 > character_script.get_ressource(r_cooker_2.ressource2)) {
-                enough_ressources = false;
-            }
-            if (r_cooker_2.amount3 > character_script.get_ressource(r_cooker_2.ressource3)) {                
-                enough_ressources = false;
-            }
-            if (enough_ressources) {
-                character_script.change_ressource(r_cooker_2.ressource1, -r_cooker_2.amount1);
-                character_script.change_ressource(r_cooker_2.ressource2, -r_cooker_2.amount2);
-                character_script.change_ressource(r_cooker_2.ressource3, -r_cooker_2.amount3);
-                cooker_2_started = true;
-            }
+      
+        // test clicks
+        if (Input.GetKeyDown("t")) {
+            change_recipe("flour", 0);
         }
-
-        // Cooker 3
-        if (recipe_cooker_3 != "" && cooker_3_started) {
-            timer_cooker_3 += Time.deltaTime;
-            if (timer_cooker_3 >= recipe_dict[recipe_cooker_3].duration) {
-                timer_cooker_3 = 0;
-                cooker_3_started = false;
-                character_script.choose_add(recipe_dict[recipe_cooker_3].name, recipe_dict[recipe_cooker_3].reward);
-            }
-        } else if (recipe_cooker_3 != "" && !cooker_3_started) {
-            Recipe r_cooker_3 = recipe_dict[recipe_cooker_3];
-            // we check if the player have enough ressources
-            bool enough_ressources = true;
-            if (r_cooker_3.amount1 > character_script.get_ressource(r_cooker_3.ressource1)) {
-                enough_ressources = false;
-            }
-            if (r_cooker_3.amount2 > character_script.get_ressource(r_cooker_3.ressource2)) {
-                enough_ressources = false;
-            }
-            if (r_cooker_3.amount3 > character_script.get_ressource(r_cooker_3.ressource3)) {                
-                enough_ressources = false;
-            }
-            if (enough_ressources) {
-                character_script.change_ressource(r_cooker_3.ressource1, -r_cooker_3.amount1);
-                character_script.change_ressource(r_cooker_3.ressource2, -r_cooker_3.amount2);
-                character_script.change_ressource(r_cooker_3.ressource3, -r_cooker_3.amount3);
-                cooker_3_started = true;
-            }
-        }
-
-        // // test clicks
-        // if (Input.GetMouseButtonDown(0)) {
-        //     change_recipe_cooker_1("flour");
-        // }
-
-        // if (Input.GetMouseButtonDown(1)) {
-        //     cancel_recipe_cooker_1();
-        // }
     }
 
-    public void change_recipe_cooker_1(string recipe) {
+    public void change_recipe(string recipe, int cooker_index) {
         if (recipe_dict.ContainsKey(recipe)) {
-            recipe_cooker_1 = recipe;
+            cookers[cooker_index].recipe = recipe;
         }
     }
 
-    public void change_recipe_cooker_2(string recipe) {
-        if (recipe_dict.ContainsKey(recipe)) {
-            recipe_cooker_2 = recipe;
+    public void cancel_recipe(int cooker_index) {
+        Recipe r = recipe_dict[cookers[cooker_index].recipe];
+        if (cookers[cooker_index].started) {
+            character_script.change_ressource(r.ressource1, r.amount1);
+            character_script.change_ressource(r.ressource2, r.amount2);
+            character_script.change_ressource(r.ressource3, r.amount3);
+            cookers[cooker_index].started = false;
         }
+        cookers[cooker_index].recipe = "";
     }
-
-    public void change_recipe_cooker_3(string recipe) {
-        if (recipe_dict.ContainsKey(recipe)) {
-            recipe_cooker_3 = recipe;
-        }
-    }
-
-    void cancel_recipe_cooker_1() {
-        //TODO : give back ressources
-        Recipe r_cooker_1 = recipe_dict[recipe_cooker_1];
-        if (cooker_1_started) {
-            character_script.change_ressource(r_cooker_1.ressource1, r_cooker_1.amount1);
-            character_script.change_ressource(r_cooker_1.ressource2, r_cooker_1.amount2);
-            character_script.change_ressource(r_cooker_1.ressource3, r_cooker_1.amount3);
-        }
-        recipe_cooker_1 = "";
-        cooker_1_started = false;
-        timer_cooker_1 = 0;
-    }
-
-    void cancel_recipe_cooker_2() {
-        Recipe r_cooker_2 = recipe_dict[recipe_cooker_2];
-        if (cooker_2_started) {
-            character_script.change_ressource(r_cooker_2.ressource1, r_cooker_2.amount1);
-            character_script.change_ressource(r_cooker_2.ressource2, r_cooker_2.amount2);
-            character_script.change_ressource(r_cooker_2.ressource3, r_cooker_2.amount3);
-        }
-        recipe_cooker_2 = "";
-        cooker_2_started = false;
-        timer_cooker_2 = 0;
-    }
-
-    void cancel_recipe_cooker_3() {
-        Recipe r_cooker_3 = recipe_dict[recipe_cooker_3];
-        if (cooker_3_started) {
-            character_script.change_ressource(r_cooker_3.ressource1, r_cooker_3.amount1);
-            character_script.change_ressource(r_cooker_3.ressource2, r_cooker_3.amount2);
-            character_script.change_ressource(r_cooker_3.ressource3, r_cooker_3.amount3);
-        }
-        recipe_cooker_3 = "";
-        cooker_2_started = false;
-        timer_cooker_3 = 0;
-    }
-
 }
 

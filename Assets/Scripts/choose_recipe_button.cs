@@ -24,13 +24,13 @@ public class choose_recipe_button : MonoBehaviour
         switch (cooker_name)
         {
             case "cooker_1_change":
-                game_controller.GetComponent<cooker>().change_recipe_cooker_1(recipe_name);
+                game_controller.GetComponent<cooker>().change_recipe(recipe_name, 0);
                 break;
             case "cooker_2_change":
-                game_controller.GetComponent<cooker>().change_recipe_cooker_2(recipe_name);
+                game_controller.GetComponent<cooker>().change_recipe(recipe_name, 1);
                 break;
             case "cooker_3_change":
-                game_controller.GetComponent<cooker>().change_recipe_cooker_3(recipe_name);
+                game_controller.GetComponent<cooker>().change_recipe(recipe_name, 2);
                 break;
             default:
                 break;
