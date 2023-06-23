@@ -147,14 +147,14 @@ public class cooker : MonoBehaviour
             }
         }
 
-        // test clicks
-        if (Input.GetMouseButtonDown(0)) {
-            change_recipe_cooker_1("flour");
-        }
+        // // test clicks
+        // if (Input.GetMouseButtonDown(0)) {
+        //     change_recipe_cooker_1("flour");
+        // }
 
-        if (Input.GetMouseButtonDown(1)) {
-            cancel_recipe_cooker_1();
-        }
+        // if (Input.GetMouseButtonDown(1)) {
+        //     cancel_recipe_cooker_1();
+        // }
     }
 
     public void change_recipe_cooker_1(string recipe) {

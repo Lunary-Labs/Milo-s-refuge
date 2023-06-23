@@ -9,32 +9,7 @@ public class character : MonoBehaviour
     public int gold = 0;
 
     // ressources
-    public int wheat = 0;
-    public int carrot = 0;
-    public int tomato = 0;
-    public int corn = 0;
-    public int eggplant = 0;
-    public int cabbage = 0;
-    public int salad = 0;
-    public int pumpkin = 0;
-    public int pickle = 0;
-    public int radish = 0;
-    public int sugar_cane = 0;
-
-    // animals
-    public int milk = 0;
-    public int eggs = 0;
-    public int wool = 0;
-    public int honey = 0;
-
-    // materials
-    public int wood = 0;
-    public int stone = 0;
-    public int iron = 0;
-
-    // mid products
-    public int flour = 0;
-    public int sugar = 0;
+    public Dictionary<string, int> ressources = new Dictionary<string, int>();
 
      // Finished products values
     enum finished_product {
@@ -45,124 +20,34 @@ public class character : MonoBehaviour
         radish_salad = 50,
     }
 
+    void Start() {
+        // Fill the ressources dictionary with all the ressources
+        ressources.Add("wheat", 0);
+        ressources.Add("carrot", 0);
+        ressources.Add("tomato", 0);
+        ressources.Add("corn", 0);
+        ressources.Add("eggplant", 0);
+        ressources.Add("cabbage", 0);
+        ressources.Add("salad", 0);
+        ressources.Add("pumpkin", 0);
+        ressources.Add("pickle", 0);
+        ressources.Add("radish", 0);
+        ressources.Add("sugar_cane", 0);
+        ressources.Add("milk", 0);
+        ressources.Add("eggs", 0);
+        ressources.Add("wool", 0);
+        ressources.Add("honey", 0);
+        ressources.Add("wood", 0);
+        ressources.Add("stone", 0);
+        ressources.Add("iron", 0);
+    }
+
     public void change_ressource (string ressource_name, int amount) {    
-        switch (ressource_name) {
-            // switch case for all ressources
-            case "gold":
-                gold += amount;
-                break;
-            case "wheat":
-                wheat += amount;
-                break;
-            case "carrot":
-                carrot += amount;
-                break;
-            case "tomato":
-                tomato += amount;
-                break;
-            case "corn":
-                corn += amount;
-                break;
-            case "eggplant":
-                eggplant += amount;
-                break;
-            case "cabbage":
-                cabbage += amount;
-                break;
-            case "salad":   
-                salad += amount;
-                break;
-            case "pumpkin":
-                pumpkin += amount;
-                break;
-            case "pickle":  
-                pickle += amount;
-                break;
-            case "radish":  
-                radish += amount;
-                break;
-            case "sugar_cane":
-                sugar_cane += amount;
-                break;
-            case "milk":
-                milk += amount;
-                break;
-            case "eggs":   
-                eggs += amount;
-                break;
-            case "wool":
-                wool += amount;
-                break;
-            case "honey":
-                honey += amount;
-                break;
-            case "wood":
-                wood += amount;
-                break;
-            case "stone":  
-                stone += amount;
-                break;
-            case "iron":
-                iron += amount;
-                break;
-            case "flour":
-                flour += amount;
-                break;
-            case "sugar":
-                sugar += amount;
-                break;
-            default:
-                break;
-        }
+        ressources[ressource_name] += amount;
     }
 
     public int get_ressource (string ressource_name) {
-        switch (ressource_name) {
-            case "gold":
-                return gold;
-            case "wheat":
-                return wheat;
-            case "carrot":
-                return carrot;
-            case "tomato":
-                return tomato;
-            case "corn":
-                return corn;
-            case "eggplant":
-                return eggplant;
-            case "cabbage":
-                return cabbage;
-            case "salad":   
-                return salad;
-            case "pumpkin":
-                return pumpkin;
-            case "pickle":  
-                return pickle;
-            case "radish":  
-                return radish;
-            case "sugar_cane":
-                return sugar_cane;
-            case "milk":
-                return milk;    
-            case "eggs":   
-                return eggs;
-            case "wool":
-                return wool;
-            case "honey":
-                return honey;
-            case "wood":
-                return wood;
-            case "stone":  
-                return stone;
-            case "iron":
-                return iron;
-            case "flour":
-                return flour;
-            case "sugar":
-                return sugar;
-            default:
-                return 0;
-        }
+        return ressources[ressource_name];
     }
 
     public void choose_add(string product, string reward) {
