@@ -32,15 +32,6 @@ public class character : MonoBehaviour
     public int gold = 0;
     public int flour = 0;
 
-     // Finished products values
-    enum finished_product {
-        bread = 10,
-        cake = 20,
-        cheese = 30,
-        pumpkin_soup = 40,
-        radish_salad = 50,
-    }
-
     void Start() {
         // Fill the ressources dictionary with all the ressources
         ressources.Add("wheat", 0);
@@ -61,7 +52,7 @@ public class character : MonoBehaviour
         ressources.Add("wood", 0);
         ressources.Add("stone", 0);
         ressources.Add("iron", 0);
-        ressources.Add("gold", 0);
+        ressources.Add("gold", 10);
         ressources.Add("flour", 0);
     }
 
@@ -95,14 +86,6 @@ public class character : MonoBehaviour
 
     public int get_ressource (string ressource_name) {
         return ressources[ressource_name];
-    }
-
-    public void choose_add(string product, string reward) {
-        if (reward == "gold") {
-            gold += (int)System.Enum.Parse(typeof(finished_product), product);
-        } else {
-            change_ressource(product, 1);
-        }
     }
 }
 

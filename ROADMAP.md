@@ -19,19 +19,21 @@
 ## REFACTOR  
 
 Need to rewrite parts of the code to remove excess amount of variables :  
-- [ ] Boat ressource handling  
-- [ ] Island ressource handling   
-- [ ] Character ressource handling  
-- [ ] Cookers  
+- [x] Boat ressource handling  
+- [x] Island ressource handling   
+- [x] Character ressource handling  
+- [x] Cookers  
+- [ ] Cooker interface
 
 ## 2nd step
 
 - [ ] In game UI  
 - [ ] Sounds (click, harvest, etc..)  
-- [ ] Island upgrade (size)  
+- [x] Island upgrade (size)  
 - [ ] Field upgrade (growth speed)  
 - [ ] cats upgrade (harvest speed)  
 - [ ] boats upgrade (speed, capacity)  
+- [ ] Interface for upgrades
 - [ ] harvest pop up (+1 wheat for example)  
 - [ ] missions  
   

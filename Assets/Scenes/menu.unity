@@ -313,6 +313,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705899237}
   - component: {fileID: 705899238}
+  - component: {fileID: 705899239}
   m_Layer: 0
   m_Name: menu_controller
   m_TagString: Untagged
@@ -350,6 +351,20 @@ MonoBehaviour:
   cursor_texture: {fileID: 2800000, guid: a705706e19f5a914a8e63f40052e6e3a, type: 3}
   pointing_texture: {fileID: 2800000, guid: 00f9bb37f1b7e9743930305a451fd3d4, type: 3}
   clicking_texture: {fileID: 2800000, guid: a1f7d9f603280d3488045555ac300f4c, type: 3}
+--- !u!114 &705899239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705899235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcbb5acef7cfb54f9c41491a5450e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  world: {fileID: 0}
 --- !u!1 &841020987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,7 +1815,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ab687ea46ad30ed46a759073d5dbe206, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.413
+  m_Volume: 0.151
   m_Pitch: 1
   Loop: 1
   Mute: 0

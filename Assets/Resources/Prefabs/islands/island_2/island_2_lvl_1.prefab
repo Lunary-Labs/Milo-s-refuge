@@ -39,6 +39,7 @@ Transform:
   - {fileID: 4780978219780221451}
   - {fileID: 2785754306246368721}
   - {fileID: 1189813493832182519}
+  - {fileID: 5232936023972377534}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,24 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fields: []
   cats: []
-  wheat: 0
-  carrot: 0
-  tomato: 0
-  corn: 0
-  eggplant: 0
-  cabbage: 0
-  salad: 0
-  pumpkin: 0
-  pickle: 0
-  radish: 0
-  sugar_cane: 0
-  milk: 0
-  eggs: 0
-  wool: 0
-  honey: 0
-  wood: 0
-  stone: 0
-  iron: 0
+  child_tilemap_colliders: []
   total_island_ressources: 0
 --- !u!156049354 &4097405454852465987
 Grid:
@@ -7819,7 +7803,6 @@ Transform:
   - {fileID: 2597324759593513587}
   - {fileID: 3972654149109352956}
   - {fileID: 7046466276300883789}
-  - {fileID: 7735030593784718215}
   m_Father: {fileID: 4097405454852465985}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9071,67 +9054,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
   m_PrefabInstance: {fileID: 248909210097688299}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &377178399772056971
+--- !u!1001 &748331203389930200
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7267908792795612982}
+    m_TransformParent: {fileID: 4097405454852465985}
     m_Modifications:
-    - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 1968839896698153989, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_Name
-      value: wheat
+      value: workbench
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.44
+      value: 5.09
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.36
+      value: -6.21
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.62458426
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
+    - target: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
---- !u!4 &7735030593784718215 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
+--- !u!4 &5232936023972377534 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
-  m_PrefabInstance: {fileID: 377178399772056971}
+  m_CorrespondingSourceObject: {fileID: 4827160427740940646, guid: 7715681b424734f43875cd96b1f9295c, type: 3}
+  m_PrefabInstance: {fileID: 748331203389930200}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &910667198836609607
 PrefabInstance:
@@ -10134,7 +10117,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder

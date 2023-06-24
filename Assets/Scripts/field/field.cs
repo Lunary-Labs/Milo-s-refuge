@@ -8,7 +8,7 @@ public class field : MonoBehaviour
     public List<GameObject> field_tiles = new List<GameObject>();
 
     // Basic growth and gather speed
-    private float base_growth_speed = 0.1f;
+    private float base_growth_speed = 1f;
     private float base_gather_speed = 0.5f;
 
     private float growth_speed;

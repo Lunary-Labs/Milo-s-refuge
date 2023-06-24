@@ -7,7 +7,7 @@ public class island : MonoBehaviour
 {
     public List<GameObject> fields = new List<GameObject>();
     public List<GameObject> cats = new List<GameObject>();
-    private TilemapCollider2D[] child_tilemap_colliders;
+    public TilemapCollider2D[] child_tilemap_colliders;
 
     public Dictionary<string, int> ressources = new Dictionary<string, int>();
 
@@ -49,12 +49,18 @@ public class island : MonoBehaviour
             // get mouse position
             Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            // check if the mouse is over a tilemap collider
             foreach (TilemapCollider2D tilemap_collider in child_tilemap_colliders) {
-                if (tilemap_collider.OverlapPoint(mouse_position)) {
+                // check if the mouse is over a field tilemap collider
+                if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "field") {
                     harvest();
                 }
+                // check if the mouse is over the workbench tilemap collider
+                else if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "workbench") {
+                    GameObject.Find("game_manager").GetComponent<island_manager>().upgrade_island(transform.gameObject.name);
+                }
             }
+
+            
         }
         total_island_ressources = 0;
         foreach (var pair in ressources) {

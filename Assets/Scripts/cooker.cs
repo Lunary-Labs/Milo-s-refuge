@@ -75,7 +75,7 @@ public class cooker : MonoBehaviour {
                 Recipe r = recipe_dict[cooker.recipe];
                 // we check if the player have enough ressources
                 bool enough_ressources = true;
-                if (r.ressource1 != "   ") {
+                if (r.ressource1 != "none") {
                     if (r.amount1 > character_script.get_ressource(r.ressource1)) {
                         enough_ressources = false;
                     }
@@ -107,14 +107,13 @@ public class cooker : MonoBehaviour {
                 if (cooker.timer >= recipe_dict[cooker.recipe].duration) {
                     cooker.timer = 0;
                     cooker.started = false;
-                    character_script.choose_add(cooker.recipe, recipe_dict[cooker.recipe].reward);
+                    if (recipe_dict[cooker.recipe].reward == "gold") {
+                        character_script.change_ressource("gold", recipe_dict[cooker.recipe].price);
+                    } else {
+                        character_script.change_ressource(recipe_dict[cooker.recipe].reward, 1);
+                    }
                 }
             } 
-        }
-      
-        // test clicks
-        if (Input.GetKeyDown("t")) {
-            change_recipe("flour", 0);
         }
     }
 
