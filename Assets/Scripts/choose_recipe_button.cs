@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class choose_recipe_button : MonoBehaviour
 {
+    public GameObject menu_manager;
+    public menu_cooker script_menu_cooker;
+
+
     public string recipe_name;
     public string cooker_name;
     public GameObject game_controller;
@@ -17,28 +21,17 @@ public class choose_recipe_button : MonoBehaviour
         cooker_name = transform.parent.name;
         game_controller = GameObject.Find("game_manager");
         close = GameObject.Find("close");
-        displayer = transform.parent.parent.parent.parent.Find("cooker_ui").Find("Viewport").Find("Content").gameObject;
-    }
-
-    public void on_click() {
-        switch (cooker_name)
-        {
-            case "cooker_1_change":
-                game_controller.GetComponent<cooker>().change_recipe(recipe_name, 0);
-                break;
-            case "cooker_2_change":
-                game_controller.GetComponent<cooker>().change_recipe(recipe_name, 1);
-                break;
-            case "cooker_3_change":
-                game_controller.GetComponent<cooker>().change_recipe(recipe_name, 2);
-                break;
-            default:
-                break;
-        }
+        menu_manager = GameObject.Find("menu_manager");
         
-        displayer_script = displayer.GetComponent<cooker_displayer>();
-        displayer_script.display_cooker();
-
-        close.GetComponent<Button>().onClick.Invoke();
+        
+    }
+ 
+    public void on_click() {
+        script_menu_cooker = menu_manager.GetComponent<menu_cooker>();
+        Debug.Log(cooker_name);
+        script_menu_cooker.change_recipe_cooker(recipe_name,script_menu_cooker.current_cooker);
+        script_menu_cooker.state_change_recipe_ui(false);
+        script_menu_cooker.state_cooker_ui(true);
+        script_menu_cooker.delete_recipe_list();
     }
 }

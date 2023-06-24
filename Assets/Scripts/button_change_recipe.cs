@@ -5,22 +5,23 @@ using UnityEngine.UI;
 
 public class button_change_recipe : MonoBehaviour
 {
+    private GameObject menu_manager_gameobject;
+    private menu_cooker menu_cooker_script;
+    private GameObject close;
 
-    public GameObject change_recipe_ui;
-    public GameObject cooker_ui;
-    public recipe_displayer recipe_displayer_script;
-    public GameObject close;
     void Start()
     {
-        change_recipe_ui = transform.parent.parent.parent.parent.parent.Find("change_recipe_ui").gameObject;
-        recipe_displayer_script = change_recipe_ui.transform.Find("Viewport").transform.Find("cooker_1_change").GetComponent<recipe_displayer>();
-        cooker_ui = transform.parent.parent.parent.parent.gameObject;
+        menu_manager_gameobject = GameObject.Find("menu_manager");
+        menu_cooker_script = menu_manager_gameobject.GetComponent<menu_cooker>();
         close = GameObject.Find("close");
     }
     public void on_click(GameObject button){
-        change_recipe_ui.SetActive(true);
-        cooker_ui.SetActive(false);
-        recipe_displayer_script.create_recipe_list_ui(button);
+        Debug.Log("yeaah");
+        menu_cooker_script.delete_cooker_list();
+        menu_cooker_script.create_recipe_list_ui(button);  
         close.GetComponent<Button>().onClick.Invoke();
+        menu_cooker_script.save_current_cooker(transform.parent.name);
+        menu_cooker_script.state_change_recipe_ui(true);
+        menu_cooker_script.state_cooker_ui(false);
     }
 }
