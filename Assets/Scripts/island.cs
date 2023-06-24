@@ -62,7 +62,7 @@ public class island : MonoBehaviour
         }
     }
 
-    void harvest () {
+    public void harvest () {
         foreach (GameObject field in fields) {
             List<GameObject> field_tiles = field.GetComponent<field>().field_tiles;
             foreach (GameObject tile in field_tiles) {

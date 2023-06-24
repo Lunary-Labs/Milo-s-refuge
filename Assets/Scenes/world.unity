@@ -1219,6 +1219,7 @@ GameObject:
   - component: {fileID: 1864563953}
   - component: {fileID: 1864563952}
   - component: {fileID: 1864563951}
+  - component: {fileID: 1864563954}
   m_Layer: 0
   m_Name: game_manager
   m_TagString: Untagged
@@ -1238,15 +1239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf9fc9d5fdeb4248b4edc19fd297448, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  character_script: {fileID: 0}
+  cooker_amount: 3
   recipe_cooker_1: 
-  recipe_cooker_2: 
-  recipe_cooker_3: 
   cooker_1_started: 0
-  cooker_2_started: 0
-  cooker_3_started: 0
   timer_cooker_1: 0
-  timer_cooker_2: 0
-  timer_cooker_3: 0
 --- !u!114 &1864563952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,7 +1257,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prestige: 0
-  gold: 0
   wheat: 0
   carrot: 0
   tomato: 0
@@ -1279,8 +1275,8 @@ MonoBehaviour:
   wood: 0
   stone: 0
   iron: 0
+  gold: 0
   flour: 0
-  sugar: 0
 --- !u!4 &1864563953
 Transform:
   m_ObjectHideFlags: 0
@@ -1296,6 +1292,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1864563954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864563950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcbb5acef7cfb54f9c41491a5450e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  world: {fileID: 0}
 --- !u!1 &1980425003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1406,10 @@ PrefabInstance:
     - target: {fileID: 1953892273274442872, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093565739938730426, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+      propertyPath: m_Name
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 4113699641259802257, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
       propertyPath: m_SortingOrder
@@ -1614,7 +1627,5 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6091835450340973481, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
-    - {fileID: 6592868212638920006, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50c2bce539372724abc1677ad7010bca, type: 3}

@@ -1698,7 +1698,7 @@ GameObject:
   - component: {fileID: 6484313483599482281}
   - component: {fileID: 6680657719651050341}
   m_Layer: 0
-  m_Name: island_1_lvl_1
+  m_Name: island_1_lvl_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1755,24 +1755,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fields: []
   cats: []
-  wheat: 0
-  carrot: 0
-  tomato: 0
-  corn: 0
-  eggplant: 0
-  cabbage: 0
-  salad: 0
-  pumpkin: 0
-  pickle: 0
-  radish: 0
-  sugar_cane: 0
-  milk: 0
-  eggs: 0
-  wool: 0
-  honey: 0
-  wood: 0
-  stone: 0
-  iron: 0
   total_island_ressources: 0
 --- !u!1 &3624185424805228303
 GameObject:
@@ -6340,7 +6322,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder
@@ -6526,7 +6508,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder
@@ -6774,7 +6756,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder

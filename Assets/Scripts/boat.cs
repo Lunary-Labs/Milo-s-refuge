@@ -99,7 +99,7 @@ public class boat : MonoBehaviour
 
     // need to find a way to remove all the if statements, very bad way to do it actually
     // probably going to use a dictionary, but all scripts involving ressources will need to be changed
-    private void load() {
+    public void load() {
         int total_island_ressources = island.GetComponent<island>().total_island_ressources;
         animator.SetBool("docked", true);
         animator.SetBool("moving", false);
@@ -124,7 +124,7 @@ public class boat : MonoBehaviour
         animator.SetInteger("boxes", (int)boxes);
     }
 
-    private void unload() {
+    public void unload() {
         animator.SetBool("docked", true);
         animator.SetBool("moving", false);
         animator.SetInteger("boxes", 0);

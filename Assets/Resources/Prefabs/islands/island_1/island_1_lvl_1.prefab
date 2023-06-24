@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 4097405454852465984}
   - component: {fileID: 4097405454852465987}
   m_Layer: 0
-  m_Name: island_1_lvl_0
+  m_Name: island_1_lvl_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -627,24 +627,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fields: []
   cats: []
-  wheat: 0
-  carrot: 0
-  tomato: 0
-  corn: 0
-  eggplant: 0
-  cabbage: 0
-  salad: 0
-  pumpkin: 0
-  pickle: 0
-  radish: 0
-  sugar_cane: 0
-  milk: 0
-  eggs: 0
-  wool: 0
-  honey: 0
-  wood: 0
-  stone: 0
-  iron: 0
   total_island_ressources: 0
 --- !u!156049354 &4097405454852465987
 Grid:
@@ -5785,10 +5767,8 @@ GameObject:
   - component: {fileID: 1929555107767707960}
   - component: {fileID: 8206039466891932564}
   - component: {fileID: 5748959465705245124}
-  - component: {fileID: 4705612779602545418}
-  - component: {fileID: 5636820603050268499}
   m_Layer: 0
-  m_Name: field
+  m_Name: empty_field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6272,36 +6252,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!19719996 &4705612779602545418
-TilemapCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5337266473315926299}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_MaximumTileChangeCount: 1000
-  m_ExtrusionFactor: 0
---- !u!114 &5636820603050268499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5337266473315926299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 695b016390e992f4d9e4dbe591acb31f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ressource: {fileID: 0}
-  field_tiles: []
 --- !u!1001 &66790014071259539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6435,7 +6385,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder
@@ -6745,7 +6695,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder
@@ -6869,7 +6819,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 797754978261931491, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_Name
-      value: 'wheat '
+      value: wheat
       objectReference: {fileID: 0}
     - target: {fileID: 7954580244219575820, guid: b129f3c9258350e4eaee3ead10fe37ce, type: 3}
       propertyPath: m_RootOrder

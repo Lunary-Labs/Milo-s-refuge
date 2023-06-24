@@ -31,8 +31,7 @@ public class field : MonoBehaviour
 
     void Start() {
         foreach (Transform child in transform) {
-            if (child.name == "wheat" || child.name == "milk")
-                field_tiles.Add(child.gameObject);
+            field_tiles.Add(child.gameObject);
         }
 
         growth_speed = base_growth_speed;
