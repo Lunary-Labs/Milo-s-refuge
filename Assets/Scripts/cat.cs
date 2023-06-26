@@ -1,23 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class cat : MonoBehaviour
 {
     
     private Animator animator;
+    private GameObject moving_zone;
 
-    public bool field_cat;
+    private bool field_cat;
 
     private bool is_moving = false;
-    public bool is_gathering = false;
-    public bool is_watering = false;
-    public bool is_choping = false;
+    private bool is_gathering = false;
+    private bool is_watering = false;
 
-    public List<string> actions = new List<string>();
-
-    private float action_timer;
     private float action_time;
+    private float action_timer;
 
     private bool front = true;
     private bool back = false;
@@ -32,14 +31,9 @@ public class cat : MonoBehaviour
     void Start() {
         animator = GetComponent<Animator>();
 
-        // check if cat is a field worker or just and island cat
-        if (transform.parent.gameObject.name == "field") {
-            field_cat = true;
-            actions.Add("gather");
-            actions.Add("water");
-        } else {
-            field_cat = false;
-        }
+        // check if cat is a field worker or just a chilling cat
+        moving_zone = transform.parent.gameObject;
+        field_cat = (moving_zone.name == "field_zone");
     }
 
     void Update() {
@@ -51,7 +45,12 @@ public class cat : MonoBehaviour
             animator.SetBool("right", right);
             move();
         } else {
-            animator.SetFloat("speed", 0);}
+            animator.SetFloat("speed", 0);
+            action_time += Time.deltaTime;
+            if (action_time >= action_timer) {
+                // Set a random destination inside the zone
+            }
+        }
     }
 
     void move() {
@@ -59,8 +58,18 @@ public class cat : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(dest_x, dest_y, 0), step);
         if (transform.position == new Vector3(dest_x, dest_y, 0)) {
             is_moving = false;
+            action_timer = Random.Range(5, 15);
             if (field_cat) {
-                set_action();
+                switch (Random.Range(1, 4)) {
+                    case 1:
+                        is_gathering = true;
+                        break;
+                    case 2:
+                        is_watering = true;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }
@@ -86,22 +95,11 @@ public class cat : MonoBehaviour
         }
     }
 
-    private void set_action() {
-        string action = actions[Random.Range(0, actions.Count)];
-        action_timer = Random.Range(8, 15);
-        action_time = 0;
-        switch (action) {
-            case "gather":
-                is_gathering = true;
-                break;
-            case "water":
-                is_watering = true;
-                break;
-            case "chop":
-                is_choping = true;
-                break;
-            default:
-                break;
-        }
+    Vector2 random_pos(TilemapCollider2D coll) {
+        Bounds bounds = coll.bounds;
+        float random_x = Random.Range(bounds.min.x, bounds.max.x);
+        float random_y = Random.Range(bounds.min.y, bounds.max.y);
+        Vector2 random_pos = new Vector2(random_x, random_y);
+        return random_pos;
     }
 }
