@@ -6,6 +6,7 @@ public class island_manager : MonoBehaviour
 {
     public Dictionary<string, int> island_levels = new Dictionary<string, int>();
     public Dictionary<string, int> island_max_levels = new Dictionary<string, int>();
+    public Dictionary<string, int> island_unlock_costs = new Dictionary<string, int>();
 
     public GameObject character;
     public GameObject world;
@@ -25,6 +26,10 @@ public class island_manager : MonoBehaviour
         island_max_levels.Add("island_2", 2);
         island_max_levels.Add("island_3", 2);
         island_max_levels.Add("island_4", 2);
+        island_unlock_costs.Add("island_1", 10);
+        island_unlock_costs.Add("island_2", 100);
+        island_unlock_costs.Add("island_3", 500);
+        island_unlock_costs.Add("island_4", 1000);
 
         // Instantiate all islands on their spawner position
         foreach (KeyValuePair<string, int> island in island_levels) {

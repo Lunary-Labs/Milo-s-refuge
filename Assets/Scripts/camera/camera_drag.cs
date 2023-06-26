@@ -32,6 +32,4 @@ public class camera_drag : MonoBehaviour
             transform.position = origin - difference;
         }
     }
-
-
 }

@@ -24,6 +24,7 @@ Need to rewrite parts of the code to remove excess amount of variables :
 - [x] Character ressource handling  
 - [x] Cookers  
 - [ ] Cooker interface
+- [ ] All the datas like island costs and max levels should be in a json file
 
 ## 2nd step
 

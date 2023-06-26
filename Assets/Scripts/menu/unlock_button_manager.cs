@@ -1,22 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class unlock_button_manager : MonoBehaviour
 {
 
     GameObject unlock_buttons;
-    GameObject character;
+    GameObject game_manager;
     GameObject world;
 
     public void generate_unlock_buttons() {
         unlock_buttons = GameObject.Find("unlock_buttons");
-        character = GameObject.Find("game_manager");
+        game_manager = GameObject.Find("game_manager");
         world = GameObject.Find("world");
 
         foreach (Transform island in world.transform.Find("islands")) {
             // instantiate unlock button if island is level 0
-            if (character.GetComponent<island_manager>().island_levels[island.name] == 0) {
+            if (game_manager.GetComponent<island_manager>().island_levels[island.name] == 0) {
                 GameObject unlock_button_prefab = Resources.Load<GameObject>("Prefabs/menu/unlock_button");
                 GameObject unlock_button_instance = Instantiate(unlock_button_prefab, unlock_buttons.transform);
                 unlock_button_instance.name = island.name + "_unlock";
@@ -26,11 +27,12 @@ public class unlock_button_manager : MonoBehaviour
                 Vector3 position_world = Camera.main.ScreenToWorldPoint(position_canvas);
                 position_world.z = 0;
                 unlock_button_instance.transform.position = position_world;
+
+                // Set the text to display the correct price
+                int cost = game_manager.GetComponent<island_manager>().island_unlock_costs[island.name];
+                unlock_button_instance.transform.Find("text").GetComponent<TMPro.TextMeshProUGUI>().text = cost.ToString();
+                
             }
         }
-    }
-
-    void Update() {
-        
     }
 }
