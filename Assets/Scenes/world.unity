@@ -556,8 +556,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingLayerID: -977426613
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &575681910
 RectTransform:
@@ -1603,6 +1603,10 @@ PrefabInstance:
     - target: {fileID: 7346316372907940948, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
       propertyPath: m_Tiles.Array.data[75].second.m_TileColorIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7806537632150000141, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7806537632569708463, guid: 50c2bce539372724abc1677ad7010bca, type: 3}
       propertyPath: m_RootOrder

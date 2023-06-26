@@ -102,8 +102,6 @@ public class boat : MonoBehaviour
         animator.SetBool("docked", true);
         animator.SetBool("moving", false);
         while (stock < max_stock && total_island_ressources > 0) {
-            Debug.Log("Stock: " + stock);
-            Debug.Log("Total island ressources: " + total_island_ressources);
             Dictionary<string, int> island_ressources = island.GetComponent<island>().ressources;
             List<string> keys = new List<string>(ressources.Keys);
             foreach (string key in keys) {
@@ -116,7 +114,6 @@ public class boat : MonoBehaviour
                 }
             }
         }
-        Debug.Log("Stock: " + stock);
         loading = true;
         float boxes = 0;
         if (stock != 0) {

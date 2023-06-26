@@ -10,6 +10,7 @@ public class cat : MonoBehaviour
     private GameObject moving_zone;
 
     private bool field_cat;
+    private bool static_cat;
 
     private bool is_moving = false;
     private bool is_gathering = false;
@@ -34,9 +35,12 @@ public class cat : MonoBehaviour
         // check if cat is a field worker or just a chilling cat
         moving_zone = transform.parent.gameObject;
         field_cat = (moving_zone.name == "field_zone");
+        static_cat = (moving_zone.name == "static_zone");
+        if (static_cat) { is_gathering = true; }
     }
 
     void Update() {
+        if (static_cat) { return; }
         if (is_moving) {
             animator.SetFloat("speed", speed);
             animator.SetBool("front", front);

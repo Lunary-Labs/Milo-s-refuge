@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1805991085
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1293375699, guid: 0b61421f9ded26f42b80f38125be4f6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,24 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 0}
-  wheat: 0
-  carrot: 0
-  tomato: 0
-  corn: 0
-  eggplant: 0
-  cabbage: 0
-  salad: 0
-  pumpkin: 0
-  pickle: 0
-  radish: 0
-  sugar_cane: 0
-  milk: 0
-  eggs: 0
-  wool: 0
-  honey: 0
-  wood: 0
-  stone: 0
-  iron: 0
+  max_stock: 50
+  stock: 0
   dest_x: 0
   dest_y: 0
   loading: 0
