@@ -51,14 +51,13 @@ public class menu_cooker : MonoBehaviour
         foreach(Cooker cooker_data in cooker_script.cookers){
             GameObject new_cooker = Instantiate(cooker_prefab, cooker_list.transform);
             new_cooker.transform.name = index.ToString();
-            index++;
             GameObject current_recipe_cooker = new_cooker.transform.GetChild(0).gameObject;
             if(cooker_script.recipe_cooker_1 == ""){
                 current_recipe_cooker.SetActive(false);
-            }   
+            }
             else{
                 current_recipe_cooker.SetActive(true);
-                Recipe recipe_data = recipe_dict[cooker_script.recipe_cooker_1];
+                Recipe recipe_data = recipe_dict[cooker_script.cookers[index].recipe];
                 current_recipe_cooker.transform.Find("recipe_name").GetComponent<TMPro.TextMeshProUGUI>().text = recipe_data.name;
                 cooker_current_image = current_recipe_cooker.transform.Find("display_recipe_image").GetComponent<Image>();
                 cooker_current_sprite = LoadSprite(Application.dataPath + recipe_data.path_sprite);
@@ -93,7 +92,7 @@ public class menu_cooker : MonoBehaviour
                     Destroy(current_recipe_cooker.transform.Find("ressource3_image").GetComponent<Image>());
                     Destroy(current_recipe_cooker.transform.Find("ressource3_text").GetComponent<TMPro.TextMeshProUGUI>());
                 }
-
+            index++;
             }
         }
        

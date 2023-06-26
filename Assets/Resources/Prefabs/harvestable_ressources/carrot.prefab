@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6380460450944860422}
   - component: {fileID: 6130272414166983351}
   m_Layer: 0
-  m_Name: wheat
+  m_Name: carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 161462233, guid: ace4a7d272ec8754d994e828dd13d684, type: 3}
+  m_Sprite: {fileID: 597175600, guid: 125844310266f5a40ab653821c4b5ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   growth_state: 0
   harvestable: 0
   sprites:
-  - {fileID: 161462233, guid: ace4a7d272ec8754d994e828dd13d684, type: 3}
-  - {fileID: -606099521, guid: ace4a7d272ec8754d994e828dd13d684, type: 3}
-  - {fileID: 289119286, guid: ace4a7d272ec8754d994e828dd13d684, type: 3}
-  - {fileID: -777894305, guid: ace4a7d272ec8754d994e828dd13d684, type: 3}
+  - {fileID: 597175600, guid: 125844310266f5a40ab653821c4b5ea6, type: 3}
+  - {fileID: 1285474684, guid: 125844310266f5a40ab653821c4b5ea6, type: 3}
+  - {fileID: -822151851, guid: 125844310266f5a40ab653821c4b5ea6, type: 3}
+  - {fileID: -54085694, guid: 125844310266f5a40ab653821c4b5ea6, type: 3}

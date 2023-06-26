@@ -15,8 +15,8 @@ public class cat : MonoBehaviour
     private bool is_gathering = false;
     private bool is_watering = false;
 
-    private float action_time;
-    private float action_timer;
+    public float action_time;
+    public float action_timer;
 
     private bool front = true;
     private bool back = false;
@@ -48,7 +48,9 @@ public class cat : MonoBehaviour
             animator.SetFloat("speed", 0);
             action_time += Time.deltaTime;
             if (action_time >= action_timer) {
-                // Set a random destination inside the zone
+                action_time = 0;
+                Vector2 new_dest = random_pos(moving_zone.GetComponent<TilemapCollider2D>());
+                set_destination(new_dest.x, new_dest.y);
             }
         }
     }
