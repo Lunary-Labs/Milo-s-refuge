@@ -1,12 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
-public class island_manager : MonoBehaviour
-{
-    public Dictionary<string, int> island_levels = new Dictionary<string, int>();
-    public Dictionary<string, int> island_max_levels = new Dictionary<string, int>();
-    public Dictionary<string, int> island_unlock_costs = new Dictionary<string, int>();
+[System.Serializable]
+public class IslandData {
+    public string name;
+    public int level;
+    public int max_level;
+    public int unlock_cost;
+    public int harvest_cost;
+    public int growing_cost;
+    public int boat_cost;
+}
+
+public class IslandList {
+    public List<IslandData> islands_data;
+}
+
+public class IslandLevel {
+    public int level;
+    public int growth_level;
+    public int harvest_level;
+    public int boat_level;
+}
+
+public class island_manager : MonoBehaviour {
+
+    public Dictionary<string, IslandData> island_data;
+    public Dictionary<string, IslandLevel> island_levels = new Dictionary<string, IslandLevel>();
 
     public GameObject character;
     public GameObject world;
@@ -15,39 +37,26 @@ public class island_manager : MonoBehaviour
         world = GameObject.Find("world");
         character = GameObject.Find("game_manager");
 
-        // Add all island levels to island_levels dictionary
-        island_levels.Add("main_island", 1);
-        island_levels.Add("island_1", 0);
-        island_levels.Add("island_2", 0);
-        island_levels.Add("island_3", 0);
-        island_levels.Add("island_4", 0);
-        island_max_levels.Add("main_island", 1);
-        island_max_levels.Add("island_1", 2);
-        island_max_levels.Add("island_2", 2);
-        island_max_levels.Add("island_3", 2);
-        island_max_levels.Add("island_4", 2);
-        island_unlock_costs.Add("island_1", 10);
-        island_unlock_costs.Add("island_2", 100);
-        island_unlock_costs.Add("island_3", 500);
-        island_unlock_costs.Add("island_4", 1000);
+        string json = File.ReadAllText(Application.dataPath + "/Scripts/islands.json");
+        IslandList list = JsonUtility.FromJson<IslandList>(json);
+        island_data = new Dictionary<string, IslandData>();
+        foreach (IslandData data in list.islands_data) {
+            island_data.Add(data.name, data);
+            IslandLevel temp = new IslandLevel { level = data.level, growth_level = 0, harvest_level = 0, boat_level = 0 };
+            island_levels.Add(data.name, temp);
+        }
 
         // Instantiate all islands on their spawner position
-        foreach (KeyValuePair<string, int> island in island_levels) {
-            GameObject spawner = GameObject.Find(island.Key + "_spawner");
-            string path = "Prefabs/islands/" + island.Key + "/" + island.Key + "_lvl_" + island.Value.ToString();
-            GameObject island_prefab = Resources.Load<GameObject>(path);
-            GameObject island_instance = Instantiate(island_prefab, world.transform.Find("islands"));
-            island_instance.transform.localPosition = spawner.transform.localPosition;
-            island_instance.name = island.Key;
+        foreach (KeyValuePair<string, IslandLevel> island in island_levels) {
+            instantiate_island(island.Key);
         }
     }
 
     public void upgrade_island(string island_name) {
-        int next_level = island_levels[island_name] + 1;
-        if (next_level > island_max_levels[island_name]) { return; }
+        int next_level = island_levels[island_name].level + 1;
+        if (next_level > island_data[island_name].max_level) { return; }
 
-        island_levels[island_name] = next_level;
-
+        island_levels[island_name].level = next_level;
         GameObject island = GameObject.Find(island_name);
 
         // If the island level is superior to 1, put island ressources in character inventory
@@ -60,10 +69,31 @@ public class island_manager : MonoBehaviour
         }
         
         Destroy(island);
+        instantiate_island(island_name);
+    }
 
-        // Instantiate new island
+    public void upgrade_growth(string island_name) {
+        if (island_levels[island_name].growth_level < 10) {
+            island_levels[island_name].growth_level++;
+        }
+    }
+
+    public void upgrade_harvest(string island_name) {
+        if (island_levels[island_name].harvest_level < 10) {
+            island_levels[island_name].harvest_level++;
+        }
+    }
+
+    public void upgrade_boat(string island_name) {
+        if (island_levels[island_name].boat_level < 10) {
+            island_levels[island_name].boat_level++;
+        }
+    }
+
+    // Instantiate provided island on its respective spawner
+    public void instantiate_island(string island_name) {
         GameObject spawner = GameObject.Find(island_name + "_spawner");
-        string path = "Prefabs/islands/" + island_name + "/" + island_name + "_lvl_" + next_level.ToString();
+        string path = "Prefabs/islands/" + island_name + "/" + island_name + "_lvl_" + island_levels[island_name].level.ToString();
         GameObject island_prefab = Resources.Load<GameObject>(path);
         GameObject island_instance = Instantiate(island_prefab, world.transform.Find("islands"));
         island_instance.transform.localPosition = spawner.transform.localPosition;
