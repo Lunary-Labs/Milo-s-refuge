@@ -12,26 +12,21 @@ public class choose_recipe_button : MonoBehaviour
     public string recipe_name;
     public string cooker_name;
     public GameObject game_controller;
-    public GameObject close;
     public GameObject displayer;
-    public cooker_displayer displayer_script;
 
     void Start () {
         recipe_name = transform.name;
         cooker_name = transform.parent.name;
         game_controller = GameObject.Find("game_manager");
-        close = GameObject.Find("close");
         menu_manager = GameObject.Find("menu_manager");
-        
-        
     }
  
     public void on_click() {
         script_menu_cooker = menu_manager.GetComponent<menu_cooker>();
-        Debug.Log(cooker_name);
+        script_menu_cooker.delete_recipe_list();
         script_menu_cooker.change_recipe_cooker(recipe_name,script_menu_cooker.current_cooker);
+        script_menu_cooker.display_cooker();
         script_menu_cooker.state_change_recipe_ui(false);
         script_menu_cooker.state_cooker_ui(true);
-        script_menu_cooker.delete_recipe_list();
     }
 }

@@ -27,6 +27,9 @@ public class menu_cooker : MonoBehaviour
     private Sprite recipe_current_sprite;
     private TMPro.TextMeshProUGUI recipe_current_text;
 
+    //button
+    public Button cooker_button; 
+
     //Recipe dictionary 
     public Dictionary<string, Recipe> recipe_dict = new Dictionary<string, Recipe>();
     // Start is called before the first frame update
@@ -52,7 +55,8 @@ public class menu_cooker : MonoBehaviour
             GameObject new_cooker = Instantiate(cooker_prefab, cooker_list.transform);
             new_cooker.transform.name = index.ToString();
             GameObject current_recipe_cooker = new_cooker.transform.GetChild(0).gameObject;
-            if(cooker_script.recipe_cooker_1 == ""){
+            Debug.Log(index);
+            if(cooker_script.cookers[index].recipe == ""){
                 current_recipe_cooker.SetActive(false);
             }
             else{
@@ -92,18 +96,17 @@ public class menu_cooker : MonoBehaviour
                     Destroy(current_recipe_cooker.transform.Find("ressource3_image").GetComponent<Image>());
                     Destroy(current_recipe_cooker.transform.Find("ressource3_text").GetComponent<TMPro.TextMeshProUGUI>());
                 }
-            index++;
             }
+            index++;
         }
        
     }
     //Instantiate recipe list 
-    public void create_recipe_list_ui(GameObject cooker_button) {
-        Debug.Log("create recipe list working");    
+    public void create_recipe_list_ui(GameObject cooker_button) {  
         string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");
         RecipeList recipe_array = JsonUtility.FromJson<RecipeList>(json); 
         foreach (Recipe recipe_data in recipe_array.recipe_list) {
-            Debug.Log("instantiate");
+
             GameObject new_recipe = Instantiate(recipe_prefab, recipe_list.transform);    
             new_recipe.name = recipe_data.name;
             // Recipe name
@@ -153,7 +156,6 @@ public class menu_cooker : MonoBehaviour
 
     public void delete_cooker_list(){
         foreach (Transform child in cooker_list.transform) {
-            Debug.Log("aaaa");
             Destroy(child.gameObject);
         }
     }
@@ -168,11 +170,14 @@ public class menu_cooker : MonoBehaviour
 
     public void save_current_cooker(string cooker_name){
         current_cooker = int.Parse(cooker_name);
-        Debug.Log(cooker_name);
     }
 
     public void change_recipe_cooker(string recipe_name, int cooker_index){
         cooker_script.change_recipe(recipe_name, cooker_index);
+    }
+
+    public void interactable_button_cooker(bool state){
+        cooker_button.interactable = state;
     }
 
     //loading sprite function
