@@ -8,6 +8,7 @@ public class island : MonoBehaviour
     public List<GameObject> fields = new List<GameObject>();
     public List<GameObject> cats = new List<GameObject>();
     public TilemapCollider2D[] child_tilemap_colliders;
+    public Transform workbench;
 
     public Dictionary<string, int> ressources = new Dictionary<string, int>();
 
@@ -41,7 +42,9 @@ public class island : MonoBehaviour
                 cats.Add(child.gameObject);
             }
         }
+
         child_tilemap_colliders = GetComponentsInChildren<TilemapCollider2D>();
+        workbench = transform.Find("workbench");
     }
 
     void Update() {
@@ -54,8 +57,11 @@ public class island : MonoBehaviour
                 if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "field") {
                     harvest();
                 }
-                // check if the mouse is over the workbench tilemap collider
-                else if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "workbench") {
+            }
+
+            // check if the mouse is over the workbench collider
+            if (workbench != null) {
+                if (workbench.GetComponent<BoxCollider2D>().OverlapPoint(mouse_position)) {
                     GameObject.Find("game_manager").GetComponent<island_manager>().upgrade_island(transform.gameObject.name);
                 }
             }
