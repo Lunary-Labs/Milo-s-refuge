@@ -13,16 +13,16 @@ public class cat : MonoBehaviour
     private bool static_cat;
 
     private bool is_moving = false;
-    private bool is_gathering = false;
-    private bool is_watering = false;
+    public bool is_harvesting = false;
+    public bool is_watering = false;
 
     public float action_time;
     public float action_timer;
 
-    private bool front = true;
-    private bool back = false;
-    private bool left = false;
-    private bool right = false;
+    public bool front = true;
+    public bool back = false;
+    public bool left = false;
+    public bool right = false;
 
     private float dest_x;
     private float dest_y;
@@ -36,7 +36,16 @@ public class cat : MonoBehaviour
         moving_zone = transform.parent.gameObject;
         field_cat = (moving_zone.name == "field_zone");
         static_cat = (moving_zone.name == "static_zone");
-        if (static_cat) { is_gathering = true; }
+
+        // Used for cats on stone island (they do not move and never stop working)
+        if (static_cat) { 
+            is_harvesting = true; 
+            animator.SetBool("harvesting", true);
+            animator.SetBool("front", front);
+            animator.SetBool("back", back);
+            animator.SetBool("left", left);
+            animator.SetBool("right", right);
+        }
     }
 
     void Update() {
@@ -68,7 +77,7 @@ public class cat : MonoBehaviour
             if (field_cat) {
                 switch (Random.Range(1, 4)) {
                     case 1:
-                        is_gathering = true;
+                        is_harvesting = true;
                         break;
                     case 2:
                         is_watering = true;
