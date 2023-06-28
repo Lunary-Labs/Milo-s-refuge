@@ -61,7 +61,7 @@ public class boat : MonoBehaviour
     }
 
     void Update() {
-        move();
+        // Handle chargement duration and animation states.
         if (loading || unloading) {
             charge_time += Time.deltaTime;
             if (charge_time >= charge_timer) {
@@ -71,36 +71,40 @@ public class boat : MonoBehaviour
                 animator.SetBool("docked", false);
                 animator.SetBool("moving", true);
             }
+        } else {
+            move();
         }
     }
 
+    // Set boat destination.
     public void set_path(float destination_x, float destination_y) {
         dest_x = destination_x;
         dest_y = destination_y;
     }
 
+    // Move the boat toward destination and load/unload depending on the dock reached.
     public void move() {
-        if (!loading && !unloading) {
-            float step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(dest_x, dest_y, 0), step);
-            if (Mathf.Abs(transform.position.x - dest_x) < 0.1 && Mathf.Abs(transform.position.y - dest_y) < 0.1) {
-                if (Mathf.Abs(dest_x - main_island_dock.transform.position.x) < 0.1 && Mathf.Abs(dest_y - main_island_dock.transform.position.y) < 0.1) {
-                    dest_x = island_dock.transform.position.x;
-                    dest_y = island_dock.transform.position.y;
-                    unload();
-                } else if (Mathf.Abs(dest_x - island_dock.transform.position.x) < 0.1 && Mathf.Abs(dest_y - island_dock.transform.position.y) < 0.1) {
-                    dest_x = main_island_dock.transform.position.x;
-                    dest_y = main_island_dock.transform.position.y;
-                    load();
-                }
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(dest_x, dest_y, 0), step);
+        if (Mathf.Abs(transform.position.x - dest_x) < 0.1 && Mathf.Abs(transform.position.y - dest_y) < 0.1) {
+            if (Mathf.Abs(dest_x - main_island_dock.transform.position.x) < 0.1 && Mathf.Abs(dest_y - main_island_dock.transform.position.y) < 0.1) {
+                dest_x = island_dock.transform.position.x;
+                dest_y = island_dock.transform.position.y;
+                unload();
+            } else if (Mathf.Abs(dest_x - island_dock.transform.position.x) < 0.1 && Mathf.Abs(dest_y - island_dock.transform.position.y) < 0.1) {
+                dest_x = main_island_dock.transform.position.x;
+                dest_y = main_island_dock.transform.position.y;
+                load();
             }
         }
     }
 
+    // Take ressources from the island until either the boat is filled or the island is empty
     public void load() {
         int total_island_ressources = island.GetComponent<island>().total_island_ressources;
         animator.SetBool("docked", true);
         animator.SetBool("moving", false);
+        // Take one ressource of each type so the boat take a little bit of everything
         while (stock < max_stock && total_island_ressources > 0) {
             Dictionary<string, int> island_ressources = island.GetComponent<island>().ressources;
             List<string> keys = new List<string>(ressources.Keys);
@@ -114,6 +118,7 @@ public class boat : MonoBehaviour
                 }
             }
         }
+        // Set animator states.
         loading = true;
         float boxes = 0;
         if (stock != 0) {
@@ -122,6 +127,7 @@ public class boat : MonoBehaviour
         animator.SetInteger("boxes", (int)boxes);
     }
 
+    // Put all the ressources of the boat into the character ressource dict
     public void unload() {
         animator.SetBool("docked", true);
         animator.SetBool("moving", false);

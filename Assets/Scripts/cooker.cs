@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-[System.Serializable]
 
+[System.Serializable]
 public class Recipe {
     public string name;
     public string reward;
@@ -25,6 +25,7 @@ public class RecipeList {
     public List<Recipe> recipe_list;
 }
 
+// Class that will be savec in cookers.json for every save
 public class Cooker {
     public string recipe;
     public float timer;
@@ -32,6 +33,7 @@ public class Cooker {
 }
 
 public class cooker : MonoBehaviour {
+    
     public character character_script;
 
     public List<Cooker> cookers = new List<Cooker>();
@@ -56,7 +58,7 @@ public class cooker : MonoBehaviour {
             cookers.Add(cooker);
         }
 
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");
+        string json = File.ReadAllText(Application.dataPath + "/Json/recipe.json");
         recipe_array = JsonUtility.FromJson<RecipeList>(json); 
         foreach (Recipe recipe_data in recipe_array.recipe_list) {
             recipe_dict.Add(recipe_data.name, recipe_data);
@@ -117,12 +119,15 @@ public class cooker : MonoBehaviour {
         }
     }
 
+    // Change the recipe of a cooker and refund the player
     public void change_recipe(string recipe, int cooker_index) {
         if (recipe_dict.ContainsKey(recipe)) {
+            cancel_recipe(cooker_index);
             cookers[cooker_index].recipe = recipe;
         }
     }
 
+    // Refund the player and remove the recipe
     public void cancel_recipe(int cooker_index) {
         Recipe r = recipe_dict[cookers[cooker_index].recipe];
         if (cookers[cooker_index].started) {

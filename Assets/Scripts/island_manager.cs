@@ -18,6 +18,7 @@ public class IslandList {
     public List<IslandData> islands_data;
 }
 
+// Part that will be saved in island_levels.json for every save the player do
 public class IslandLevel {
     public int level;
     public int growth_level;
@@ -33,11 +34,13 @@ public class island_manager : MonoBehaviour {
     public GameObject character;
     public GameObject world;
 
+    // Initialize island Dicts, GameObject references and instantiate islands.
     public void instatiate_islands() {
         world = GameObject.Find("world");
         character = GameObject.Find("game_manager");
 
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/islands.json");
+        // Fill dictionnaries with islands.json
+        string json = File.ReadAllText(Application.dataPath + "/Json/islands.json");
         IslandList list = JsonUtility.FromJson<IslandList>(json);
         island_data = new Dictionary<string, IslandData>();
         foreach (IslandData data in list.islands_data) {
@@ -46,12 +49,15 @@ public class island_manager : MonoBehaviour {
             island_levels.Add(data.name, temp);
         }
 
-        // Instantiate all islands on their spawner position
+        // Instantiate all islands on their spawner position.
         foreach (KeyValuePair<string, IslandLevel> island in island_levels) {
             instantiate_island(island.Key);
         }
     }
 
+    // Upgrade island level if the player have enought money. 
+    // Not used for the first upgrade. see menu/unlock_button.
+    // TODO: Money handling.
     public void upgrade_island(string island_name) {
         int next_level = island_levels[island_name].level + 1;
         if (next_level > island_data[island_name].max_level) { return; }
@@ -72,25 +78,28 @@ public class island_manager : MonoBehaviour {
         instantiate_island(island_name);
     }
 
+    // Increase the growth level of the provided island if the player can pay
     public void upgrade_growth(string island_name) {
         if (island_levels[island_name].growth_level < 10) {
             island_levels[island_name].growth_level++;
         }
     }
 
+    // Increase the harvest level of the provided island if the player can pay
     public void upgrade_harvest(string island_name) {
         if (island_levels[island_name].harvest_level < 10) {
             island_levels[island_name].harvest_level++;
         }
     }
 
+    // Increase the boat level of the provided island if the player can pay
     public void upgrade_boat(string island_name) {
         if (island_levels[island_name].boat_level < 10) {
             island_levels[island_name].boat_level++;
         }
     }
 
-    // Instantiate provided island on its respective spawner
+    // Instantiate the provided island on its respective spawner
     public void instantiate_island(string island_name) {
         GameObject spawner = GameObject.Find(island_name + "_spawner");
         string path = "Prefabs/islands/" + island_name + "/" + island_name + "_lvl_" + island_levels[island_name].level.ToString();
