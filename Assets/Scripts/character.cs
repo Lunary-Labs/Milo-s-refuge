@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class character : MonoBehaviour
-{
+public class character : MonoBehaviour {
 
     public int prestige = 0;
 
@@ -80,10 +79,12 @@ public class character : MonoBehaviour
         gold = ressources["gold"];
     }
 
+    // Change the amount of provided ressource.
     public void change_ressource (string ressource_name, int amount) {    
         ressources[ressource_name] += amount;
     }
 
+    // Return the amount of selected ressource.
     public int get_ressource (string ressource_name) {
         return ressources[ressource_name];
     }

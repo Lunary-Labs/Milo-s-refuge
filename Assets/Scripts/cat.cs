@@ -68,6 +68,7 @@ public class cat : MonoBehaviour
         }
     }
 
+    // Move the cat toward its destination and start an action if the destination is reached
     void move() {
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(dest_x, dest_y, 0), step);
@@ -89,16 +90,19 @@ public class cat : MonoBehaviour
         }
     }
 
+    // Set the dest_x and dest_y attributes of the cat and rotate him to look toward them.
     public void set_destination(float x, float y) {
         dest_x = x;
         dest_y = y;
         is_moving = true;
         float angle = Mathf.Atan2(dest_y - transform.position.y, dest_x - transform.position.x) * Mathf.Rad2Deg;
+        // Confine angle between 0 and 360 degrees.
         if (angle < 0) angle += 360;
         front = false;
         back = false;
         left = false;
         right = false;
+        // Determine animation to choose.
         if (angle >= 45 && angle < 135) {
             back = true;
         } else if (angle >= 135 && angle < 225) {
@@ -110,6 +114,7 @@ public class cat : MonoBehaviour
         }
     }
 
+    // Return a random Vector2 located inside of the provided tilemap collider.
     Vector2 random_pos(TilemapCollider2D coll) {
         Bounds bounds = coll.bounds;
         float random_x = Random.Range(bounds.min.x, bounds.max.x);

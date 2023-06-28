@@ -8,7 +8,6 @@ public class choose_recipe_button : MonoBehaviour
     public GameObject menu_manager;
     public menu_cooker script_menu_cooker;
 
-
     public string recipe_name;
     public string cooker_name;
     public GameObject game_controller;

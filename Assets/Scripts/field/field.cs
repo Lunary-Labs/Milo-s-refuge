@@ -9,14 +9,13 @@ public class field : MonoBehaviour
 
     // Basic growth and gather speed
     private float base_growth_speed = 1f;
-    private float base_gather_speed = 0.5f;
+    private float base_gather_speed = 2f;
 
     private float growth_speed;
     private float gather_speed;
 
-    private bool auto_harvest = false;
-
-    // Auto harvest timer
+    // Auto harvest
+    private bool auto_harvest = true;
     private float next_harvest_timer = 0f;
     private float harvest_timer = 0f;
 
@@ -33,22 +32,22 @@ public class field : MonoBehaviour
         foreach (Transform child in transform) {
             field_tiles.Add(child.gameObject);
         }
-
         growth_speed = base_growth_speed;
         gather_speed = base_gather_speed;
     }
 
     void Update() {
+        // Auto harvest handling
         if (auto_harvest) {
             harvest_timer += Time.deltaTime;
             if (harvest_timer >= next_harvest_timer) {
                 random_harvest();
                 harvest_timer = 0f;
-                next_harvest_timer = 1 / gather_speed;
+                next_harvest_timer = 3 / gather_speed;
             }
         }
 
-        // Grow random ressources
+        // Grow ressources
         foreach (GameObject child in field_tiles) {
             child.GetComponent<field_tile>().grow(growth_speed * Time.deltaTime);
         }
@@ -74,13 +73,14 @@ public class field : MonoBehaviour
         }
     }
 
+    // Harvest all child tiles of the field.
     void harvest() {
         foreach (GameObject child in field_tiles) {
             child.GetComponent<field_tile>().harvest();
         }
     }
 
-    // need to harvest a number of ressources depending on the number of cats --> harvest stats upgrade
+    // Randomly harvest a tile on the field.
     void random_harvest() {
         List<GameObject> harvestable_tiles = new List<GameObject>();
         foreach (GameObject child in field_tiles) {
@@ -93,13 +93,15 @@ public class field : MonoBehaviour
         }
     }
 
-    void fertilize () {
+    // Activate fertilization for the given time
+    void fertilize (float time) {
         is_fertilized = true;
-        fertilized_time_remaining = 10f;
+        fertilized_time_remaining = time;
     }
 
-    void feed () {
+    // Activate cat powerup for the given time
+    void feed (float time) {
         is_fed = true;
-        fed_time_remaining = 10f;
+        fed_time_remaining = time;
     }
 }

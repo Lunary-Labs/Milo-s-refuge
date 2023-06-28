@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class cursor_controller : MonoBehaviour
-{
+public class cursor_controller : MonoBehaviour {
 
     public Texture2D cursor_texture;
     public Texture2D pointing_texture;

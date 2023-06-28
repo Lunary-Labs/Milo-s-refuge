@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine.Tilemaps;
 using UnityEngine;
 
-public class island : MonoBehaviour
-{
+public class island : MonoBehaviour {
+
     public List<GameObject> fields = new List<GameObject>();
-    public List<GameObject> cats = new List<GameObject>();
     public TilemapCollider2D[] child_tilemap_colliders;
     public Transform workbench;
 
+    // Ressource stock
     public Dictionary<string, int> ressources = new Dictionary<string, int>();
-
     public int total_island_ressources;
 
     void Start() {
@@ -35,11 +34,10 @@ public class island : MonoBehaviour
         ressources.Add("stone", 0);
         ressources.Add("iron", 0);
     
+        // Get all fields GameObject
         foreach (Transform child in transform) {
             if (child.name == "field") {
                 fields.Add(child.gameObject);
-            } else if (child.name == "cat") {
-                cats.Add(child.gameObject);
             }
         }
 
@@ -49,24 +47,19 @@ public class island : MonoBehaviour
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
-            // get mouse position
             Vector3 mouse_position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
+            // check if the mouse is over a field tilemap collider
             foreach (TilemapCollider2D tilemap_collider in child_tilemap_colliders) {
-                // check if the mouse is over a field tilemap collider
                 if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "field") {
                     harvest();
                 }
             }
-
-            // check if the mouse is over the workbench collider
+            // check if the mouse is over the workbench box collider
             if (workbench != null) {
                 if (workbench.GetComponent<BoxCollider2D>().OverlapPoint(mouse_position)) {
                     GameObject.Find("game_manager").GetComponent<island_manager>().upgrade_island(transform.gameObject.name);
                 }
             }
-
-            
         }
         total_island_ressources = 0;
         foreach (var pair in ressources) {
@@ -74,6 +67,7 @@ public class island : MonoBehaviour
         }
     }
 
+    // Harvest all the fields of the island and add ressources to stock.
     public void harvest () {
         foreach (GameObject field in fields) {
             List<GameObject> field_tiles = field.GetComponent<field>().field_tiles;
