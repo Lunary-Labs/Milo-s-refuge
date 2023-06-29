@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class field : MonoBehaviour
-{
-    public GameObject ressource;
+public class field : MonoBehaviour {
+    
     public List<GameObject> field_tiles = new List<GameObject>();
 
     // Basic growth and gather speed

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class unlock_button_manager : MonoBehaviour
-{
+public class unlock_button_manager : MonoBehaviour {
 
     GameObject unlock_buttons;
     GameObject game_manager;
@@ -18,7 +17,7 @@ public class unlock_button_manager : MonoBehaviour
         foreach (Transform island in world.transform.Find("islands")) {
             // instantiate unlock button if island is level 0
             if (game_manager.GetComponent<island_manager>().island_levels[island.name].level == 0) {
-                GameObject unlock_button_prefab = Resources.Load<GameObject>("Prefabs/menu/unlock_button");
+                GameObject unlock_button_prefab = Resources.Load<GameObject>("Prefabs/island_ui/unlock_button");
                 GameObject unlock_button_instance = Instantiate(unlock_button_prefab, unlock_buttons.transform);
                 unlock_button_instance.name = island.name + "_unlock";
 

@@ -57,7 +57,7 @@ public class island : MonoBehaviour {
             // check if the mouse is over the workbench box collider
             if (workbench != null) {
                 if (workbench.GetComponent<BoxCollider2D>().OverlapPoint(mouse_position)) {
-                    GameObject.Find("game_manager").GetComponent<island_manager>().upgrade_island(transform.gameObject.name);
+                    GameObject.Find("menu_manager").GetComponent<island_menu_manager>().open_menu(transform.name);
                 }
             }
         }

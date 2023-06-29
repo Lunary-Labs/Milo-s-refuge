@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class benchmark_box : MonoBehaviour
-{
-
+public class workbench : MonoBehaviour {
+   
     private float timer;
     private float duration = 0.35f;
     public int dir = 1;
