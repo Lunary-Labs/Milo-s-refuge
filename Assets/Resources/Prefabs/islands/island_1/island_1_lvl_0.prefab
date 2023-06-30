@@ -549,6 +549,7 @@ MonoBehaviour:
   fields: []
   cats: []
   child_tilemap_colliders: []
+  workbench: {fileID: 0}
   total_island_ressources: 0
 --- !u!156049354 &4097405454852465987
 Grid:

@@ -5,9 +5,9 @@ using UnityEngine;
 public class workbench : MonoBehaviour {
    
     private float timer;
-    private float duration = 0.35f;
+    private float duration = 2f;
     public int dir = 1;
-    private float moving_speed = 0.5f;
+    private float moving_speed = 0.1f;
 
     void Update() {
         if (timer < duration) {
