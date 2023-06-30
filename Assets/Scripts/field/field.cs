@@ -73,7 +73,7 @@ public class field : MonoBehaviour {
     }
 
     // Harvest all child tiles of the field.
-    void harvest() {
+    public void harvest() {
         foreach (GameObject child in field_tiles) {
             child.GetComponent<field_tile>().harvest();
         }

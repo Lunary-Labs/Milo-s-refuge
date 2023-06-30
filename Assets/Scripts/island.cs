@@ -51,7 +51,8 @@ public class island : MonoBehaviour {
             // check if the mouse is over a field tilemap collider
             foreach (TilemapCollider2D tilemap_collider in child_tilemap_colliders) {
                 if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "field") {
-                    harvest();
+                    tilemap_collider.gameObject.GetComponent<field>().harvest();
+                    // harvest();
                 }
             }
             // check if the mouse is over the workbench box collider
