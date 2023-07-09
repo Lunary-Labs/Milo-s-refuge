@@ -46,9 +46,11 @@ public class field_tile : MonoBehaviour {
 
     // Harvest tile and reset states.
     public void harvest() {
-        growth_state = 0;
-        harvestable = false;
-        next_growth_timer = Random.Range(timer_min, timer_max);
+        if (harvestable) {
+            growth_state = 0;
+            harvestable = false;
+            next_growth_timer = Random.Range(timer_min, timer_max);
+            transform.parent.parent.GetComponent<island>().ressources[transform.name] += 1;
+        }
     }
-
 }

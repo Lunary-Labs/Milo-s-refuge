@@ -52,7 +52,6 @@ public class island : MonoBehaviour {
             foreach (TilemapCollider2D tilemap_collider in child_tilemap_colliders) {
                 if (tilemap_collider.OverlapPoint(mouse_position) && tilemap_collider.gameObject.name == "field") {
                     tilemap_collider.gameObject.GetComponent<field>().harvest();
-                    // harvest();
                 }
             }
             // check if the mouse is over the workbench box collider
@@ -71,13 +70,7 @@ public class island : MonoBehaviour {
     // Harvest all the fields of the island and add ressources to stock.
     public void harvest () {
         foreach (GameObject field in fields) {
-            List<GameObject> field_tiles = field.GetComponent<field>().field_tiles;
-            foreach (GameObject tile in field_tiles) {
-                if (tile.GetComponent<field_tile>().harvestable) {
-                    ressources[tile.name] += 1;
-                    tile.GetComponent<field_tile>().harvest();
-                }
-            }
+            field.GetComponent<field>().harvest();
         }
     }
 }
