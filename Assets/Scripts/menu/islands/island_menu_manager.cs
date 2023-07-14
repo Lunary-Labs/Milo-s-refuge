@@ -1,17 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class island_menu_manager : MonoBehaviour {
     
     private GameObject menu;
     private GameObject game_manager;
 
+    /* Menu elements */
+    public GameObject title;
+    public GameObject island_cost_1;
+    public GameObject island_cost_2;
+    public Slider island_level_slider;
+
+    public GameObject boat_cost;
+
+    public GameObject growth_cost;
+
+    public GameObject harvest_cost;
+
     public string current_island;
 
     void Start() {
         menu = FindInactiveObjectByName("island_menu");
         game_manager = GameObject.Find("game_manager");
+        title = menu.transform.Find("title").gameObject;
+
     }
 
     public void open_menu(string island_name) {
