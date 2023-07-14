@@ -14,6 +14,8 @@
             "level": 0,
             "max_level": 2,
             "unlock_cost": 10,
+            "wood_cost": 10,
+            "stone_cost": 10,
             "harvest_cost": 20,
             "growing_cost": 30,
             "boat_cost": 40
@@ -23,6 +25,8 @@
             "level": 0,
             "max_level": 2,
             "unlock_cost": 100,
+            "wood_cost": 10,
+            "stone_cost": 10,
             "harvest_cost": 30,
             "growing_cost": 40,
             "boat_cost": 50
@@ -32,6 +36,8 @@
             "level": 0,
             "max_level": 2,
             "unlock_cost": 500,
+            "wood_cost": 10,
+            "stone_cost": 10,
             "harvest_cost": 40,
             "growing_cost": 50,
             "boat_cost": 60
@@ -41,6 +47,8 @@
             "level": 0,
             "max_level": 2,
             "unlock_cost": 1000,
+            "wood_cost": 10,
+            "stone_cost": 10,
             "harvest_cost": 50,
             "growing_cost": 60,
             "boat_cost": 70

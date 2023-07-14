@@ -9,6 +9,8 @@ public class IslandData {
     public int level;
     public int max_level;
     public int unlock_cost;
+    public int wood_cost;
+    public int stone_cost;
     public int harvest_cost;
     public int growing_cost;
     public int boat_cost;

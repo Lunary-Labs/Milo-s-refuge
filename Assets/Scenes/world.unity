@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 285453125}
   - component: {fileID: 285453124}
   m_Layer: 5
-  m_Name: amount
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -772,9 +772,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: {fileID: 0}
-  island_cost_1: {fileID: 0}
-  island_cost_2: {fileID: 0}
-  island_level_slider: {fileID: 0}
+  island_wood_cost: {fileID: 0}
+  island_stone_cost: {fileID: 0}
   boat_cost: {fileID: 0}
   growth_cost: {fileID: 0}
   harvest_cost: {fileID: 0}
@@ -1904,7 +1903,7 @@ GameObject:
   - component: {fileID: 878260626}
   - component: {fileID: 878260625}
   m_Layer: 5
-  m_Name: amount
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2995,7 +2994,7 @@ GameObject:
   - component: {fileID: 1399281220}
   - component: {fileID: 1399281219}
   m_Layer: 5
-  m_Name: amount1
+  m_Name: wood_cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3130,7 +3129,7 @@ GameObject:
   - component: {fileID: 1407628737}
   - component: {fileID: 1407628736}
   m_Layer: 5
-  m_Name: amount2
+  m_Name: stone_cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3398,7 +3397,7 @@ GameObject:
   - component: {fileID: 1491268454}
   - component: {fileID: 1491268453}
   m_Layer: 5
-  m_Name: amount
+  m_Name: cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
