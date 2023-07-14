@@ -112,7 +112,7 @@ public class cooker : MonoBehaviour {
                     if (recipe_dict[cooker.recipe].reward == "gold") {
                         character_script.change_ressource("gold", recipe_dict[cooker.recipe].price);
                     } else {
-                        character_script.change_ressource(recipe_dict[cooker.recipe].reward, 1);
+                        character_script.change_ressource(recipe_dict[cooker.recipe].name, 1);
                     }
                 }
             } 
