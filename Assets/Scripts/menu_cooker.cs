@@ -35,10 +35,11 @@ public class menu_cooker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");
+        string json = File.ReadAllText(Application.dataPath + "/Json/recipe.json");
         RecipeList recipe_array = JsonUtility.FromJson<RecipeList>(json); 
         foreach (Recipe recipe_data in recipe_array.recipe_list) {
             recipe_dict.Add(recipe_data.name, recipe_data);
+            Debug.Log(recipe_data.name);
         }   
     }
 
@@ -55,7 +56,6 @@ public class menu_cooker : MonoBehaviour
             GameObject new_cooker = Instantiate(cooker_prefab, cooker_list.transform);
             new_cooker.transform.name = index.ToString();
             GameObject current_recipe_cooker = new_cooker.transform.GetChild(0).gameObject;
-            Debug.Log(index);
             if(cooker_script.cookers[index].recipe == ""){
                 current_recipe_cooker.SetActive(false);
             }
@@ -103,7 +103,7 @@ public class menu_cooker : MonoBehaviour
     }
     //Instantiate recipe list 
     public void create_recipe_list_ui(GameObject cooker_button) {  
-        string json = File.ReadAllText(Application.dataPath + "/Scripts/recipe.json");
+        string json = File.ReadAllText(Application.dataPath + "/Json/recipe.json");
         RecipeList recipe_array = JsonUtility.FromJson<RecipeList>(json); 
         foreach (Recipe recipe_data in recipe_array.recipe_list) {
 
@@ -173,6 +173,7 @@ public class menu_cooker : MonoBehaviour
     }
 
     public void change_recipe_cooker(string recipe_name, int cooker_index){
+        Debug.Log(recipe_name);
         cooker_script.change_recipe(recipe_name, cooker_index);
     }
 
@@ -193,6 +194,3 @@ public class menu_cooker : MonoBehaviour
         return null;
     }
 }
-
-        
-    

@@ -129,6 +129,7 @@ public class cooker : MonoBehaviour {
 
     // Refund the player and remove the recipe
     public void cancel_recipe(int cooker_index) {
+        if (cookers[cooker_index].recipe == "") {return;}
         Recipe r = recipe_dict[cookers[cooker_index].recipe];
         if (cookers[cooker_index].started) {
             character_script.change_ressource(r.ressource1, r.amount1);

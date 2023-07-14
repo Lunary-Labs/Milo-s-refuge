@@ -21,6 +21,7 @@ public class choose_recipe_button : MonoBehaviour
     }
  
     public void on_click() {
+        Debug.Log(recipe_name);
         script_menu_cooker = menu_manager.GetComponent<menu_cooker>();
         script_menu_cooker.delete_recipe_list();
         script_menu_cooker.change_recipe_cooker(recipe_name,script_menu_cooker.current_cooker);
