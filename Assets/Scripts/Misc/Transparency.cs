@@ -16,12 +16,14 @@ public class Transparency : MonoBehaviour {
   }
 
   void OnTriggerEnter2D(Collider2D other) {
+    // TODO: Use tags instead of names
     if(other.gameObject.name == "Character" && other is BoxCollider2D) {
       _spriteRenderer.color = new Color(_originalColor.r, _originalColor.g, _originalColor.b, _transparencyLevel);
     }
   }
 
   void OnTriggerExit2D(Collider2D other) {
+    // TODO: Use tags instead of names
     if(other.gameObject.name == "Character" && other is BoxCollider2D) {
       _spriteRenderer.color = _originalColor;
     }
