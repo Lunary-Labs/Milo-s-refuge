@@ -53,6 +53,9 @@ TagManager:
   - name: AboveGround
     uniqueID: 284426699
     locked: 0
+  - name: TranparencyOverPlayer
+    uniqueID: 3100923063
+    locked: 0
   - name: UI
     uniqueID: 2085216099
     locked: 0
