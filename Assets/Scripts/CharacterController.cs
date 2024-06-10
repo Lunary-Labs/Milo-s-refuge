@@ -6,38 +6,38 @@ public class CharacterController2D : MonoBehaviour {
   private float _walkSpeed = 4f;
   private float _runSpeed = 6f;
   private float _currentSpeed;
+  private Rigidbody2D _rigidbody;
   private Animator _animator;
   private string _lastDirection = "CharacterIdleFront";
   private bool _isGathering = false;
   private FieldTile _currentNearestTile = null;
   private List<FieldTile> nearbyTiles = new List<FieldTile>();
+  private Vector2 _movement = Vector2.zero;
 
   void Start() {
     _animator = GetComponent<Animator>();
+    _rigidbody = GetComponent<Rigidbody2D>();
     _currentSpeed = _walkSpeed;
   }
 
+  void FixedUpdate() {
+    _rigidbody.MovePosition(_rigidbody.position + _movement.normalized * _currentSpeed * Time.fixedDeltaTime);
+  }
+
   void Update() {
-    Vector2 movement = new Vector2();
+    _movement = Vector2.zero;
     if (!_isGathering) {
       // TODO: use unity mapping system instead of hard coded keys
-      if (Input.GetKey(KeyCode.W)) movement.y = 1;
-      if (Input.GetKey(KeyCode.S)) movement.y = -1;
-      if (Input.GetKey(KeyCode.A)) movement.x = -1;
-      if (Input.GetKey(KeyCode.D)) movement.x = 1;
+      if (Input.GetKey(KeyCode.W)) _movement.y = 1;
+      if (Input.GetKey(KeyCode.S)) _movement.y = -1;
+      if (Input.GetKey(KeyCode.A)) _movement.x = -1;
+      if (Input.GetKey(KeyCode.D)) _movement.x = 1;
       _currentSpeed = (Input.GetKey(KeyCode.LeftControl)) ? _runSpeed : _walkSpeed;
-
-      HandleMovement(movement);
-      HandleAnimation(movement);
+      HandleAnimation(_movement);
     }
 
     UpdateNearestTile();
     if (Input.GetMouseButtonDown(0)) StartGathering();
-  }
-
-  void HandleMovement(Vector2 movement) {
-    movement.Normalize();
-    transform.Translate(movement * _currentSpeed * Time.deltaTime, Space.World);
   }
 
   void HandleAnimation(Vector2 movement) {
