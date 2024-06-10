@@ -20,17 +20,12 @@ public class CharacterController2D : MonoBehaviour {
   void Update() {
     Vector2 movement = new Vector2();
     if (!_isGathering) {
-      // TODO: use unity mapping system
+      // TODO: use unity mapping system instead of hard coded keys
       if (Input.GetKey(KeyCode.W)) movement.y = 1;
       if (Input.GetKey(KeyCode.S)) movement.y = -1;
       if (Input.GetKey(KeyCode.A)) movement.x = -1;
       if (Input.GetKey(KeyCode.D)) movement.x = 1;
-
-      if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) {
-        _currentSpeed = _runSpeed;
-      } else {
-        _currentSpeed = _walkSpeed;
-      }
+      _currentSpeed = (Input.GetKey(KeyCode.LeftControl)) ? _runSpeed : _walkSpeed;
 
       HandleMovement(movement);
       HandleAnimation(movement);
@@ -103,7 +98,7 @@ public class CharacterController2D : MonoBehaviour {
     foreach (Collider2D collider in colliders) {
       FieldTile tile = collider.GetComponent<FieldTile>();
       if (tile != null && tile.Harvestable) {
-        float distance = (tile.transform.position - this.transform.position).sqrMagnitude;
+        float distance = (tile.transform.position - transform.position).sqrMagnitude;
         if (distance < minDistance) {
           minDistance = distance;
           nearestTile = tile;
@@ -111,9 +106,7 @@ public class CharacterController2D : MonoBehaviour {
       }
     }
 
-    if (nearestTile != _currentNearestTile) {
-      _currentNearestTile = nearestTile;
-    }
+    _currentNearestTile = nearestTile;
   }
 
   void HarvestTile() {
