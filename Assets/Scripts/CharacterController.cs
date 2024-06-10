@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour {
-  private float _walkSpeed = 4f;
-  private float _runSpeed = 6f;
+  private float _walkSpeed = 2.5f;
+  private float _runSpeed = 4f;
   private float _currentSpeed;
   private Rigidbody2D _rigidbody;
   private Animator _animator;
