@@ -1,0 +1,1067 @@
+fileFormatVersion: 2
+guid: 63517715dcc96e346a3c0bf15814f50c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: all cow animations_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 304
+      height: 672
+    spriteID: b132e28949f8f5f46aa29a119ace7805
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: all cow animations_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 684
+      width: 304
+      height: 672
+    spriteID: 6469f8880eb01314fa812655130c5c78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 684}
+  - name: all cow animations_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1364
+      width: 304
+      height: 672
+    spriteID: f72064fb6d30a474795ddf35ddc51113
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1364}
+  - name: all cow animations_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2044
+      width: 304
+      height: 672
+    spriteID: 031af66c954e45a44b88eaad34f5d679
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2044}
+  - name: all cow animations_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2724
+      width: 304
+      height: 672
+    spriteID: d13965490396e3049bd1a46f32123778
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2724}
+  - name: all cow animations_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3404
+      width: 304
+      height: 672
+    spriteID: 68cfc495c9733c942b0199c172a664a2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3404}
+  - name: all cow animations_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 316
+      y: 4
+      width: 304
+      height: 672
+    spriteID: f6f69861beca1d640ba2540776f6d167
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 316, y: 4}
+  - name: all cow animations_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 316
+      y: 684
+      width: 304
+      height: 672
+    spriteID: a54d9cfc7130d8c4cb5c9bcc873bfc1b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 316, y: 684}
+  - name: all cow animations_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 316
+      y: 1364
+      width: 304
+      height: 672
+    spriteID: d0b2500c2cace4e49ae196f5812c96d2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 316, y: 1364}
+  - name: all cow animations_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 316
+      y: 2044
+      width: 304
+      height: 672
+    spriteID: db1648d9a853edb4282adfe35a260530
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 316, y: 2044}
+  - name: all cow animations_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 316
+      y: 2724
+      width: 304
+      height: 672
+    spriteID: 3275734ad59005e488e3abde2a5c5a31
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 316, y: 2724}
+  - name: all cow animations_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 316
+      y: 3404
+      width: 304
+      height: 672
+    spriteID: 4720500c1a49e6a4b9497ba15cd53ba9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 316, y: 3404}
+  - name: all cow animations_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 628
+      y: 4
+      width: 304
+      height: 672
+    spriteID: dbe4e7776714f94428dd3ab86fd1a5fd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 628, y: 4}
+  - name: all cow animations_Frame_13
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 628
+      y: 684
+      width: 304
+      height: 672
+    spriteID: c51f1ae7e43fff74ba4ab6ee07345c7e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 628, y: 684}
+  - name: all cow animations_Frame_14
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 628
+      y: 1364
+      width: 304
+      height: 672
+    spriteID: 00fc72a14cf027d459b4c34da2642c68
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 628, y: 1364}
+  - name: all cow animations_Frame_15
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 628
+      y: 2044
+      width: 304
+      height: 672
+    spriteID: 9eabbc2945e644645810f901eaed1214
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 628, y: 2044}
+  - name: all cow animations_Frame_16
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 628
+      y: 2724
+      width: 304
+      height: 672
+    spriteID: b24b27d5401bd2544852c975f93982ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 628, y: 2724}
+  - name: all cow animations_Frame_17
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 628
+      y: 3404
+      width: 304
+      height: 672
+    spriteID: f207f2f69f1471445acb951592c76048
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 628, y: 3404}
+  - name: all cow animations_Frame_18
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 4
+      width: 304
+      height: 672
+    spriteID: b66e94fe84602864abbe8837a7e79601
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 4}
+  - name: all cow animations_Frame_19
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 684
+      width: 304
+      height: 672
+    spriteID: eaf5b419419e8934f91aff1129d90ead
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 684}
+  - name: all cow animations_Frame_20
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 1364
+      width: 304
+      height: 672
+    spriteID: 4d60d693429f6fc4fb2ed5e120d6e99b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 1364}
+  - name: all cow animations_Frame_21
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 2044
+      width: 304
+      height: 672
+    spriteID: dab039714ddcbb345820bcdc3b5b6451
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 2044}
+  - name: all cow animations_Frame_22
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 2724
+      width: 304
+      height: 672
+    spriteID: 22e49962256c5a0478402cd65f536ebe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 2724}
+  - name: all cow animations_Frame_23
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 940
+      y: 3404
+      width: 304
+      height: 672
+    spriteID: 7cb8fda929840e44d87b36c75dc12603
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 940, y: 3404}
+  - name: all cow animations_Frame_24
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 4
+      width: 304
+      height: 672
+    spriteID: 4b71cccf02ac97b4fbe3793517a14c1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 4}
+  - name: all cow animations_Frame_25
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 684
+      width: 304
+      height: 672
+    spriteID: 0ccc292cfd26f4149bb679d05df63efb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 684}
+  - name: all cow animations_Frame_26
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 1364
+      width: 304
+      height: 672
+    spriteID: 72e63146f11cf334a9451606fa39e827
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 1364}
+  - name: all cow animations_Frame_27
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 2044
+      width: 304
+      height: 672
+    spriteID: 26d2526e0045a43498aaa5a34fbb95c1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 2044}
+  - name: all cow animations_Frame_28
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 2724
+      width: 304
+      height: 672
+    spriteID: fd62d18794afd0a49988e6c5496d28b2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 2724}
+  - name: all cow animations_Frame_29
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1252
+      y: 3404
+      width: 304
+      height: 672
+    spriteID: a61f85385c13fab4585aa949792d5bef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1252, y: 3404}
+  - name: all cow animations_Frame_30
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1564
+      y: 4
+      width: 304
+      height: 672
+    spriteID: 254bfe4106ccb324eb67b2d94087c883
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1564, y: 4}
+  - name: all cow animations_Frame_31
+    originalName: 
+    pivot: {x: 0.5, y: 0.04761905}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1564
+      y: 684
+      width: 304
+      height: 672
+    spriteID: 81854386a7d609e4fa3d3647808dd831
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1564, y: 684}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 212208631
+    name: all cow animations
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: all cow animations_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: b132e28949f8f5f46aa29a119ace7805
+    - name: all cow animations_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 6469f8880eb01314fa812655130c5c78
+    - name: all cow animations_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: f72064fb6d30a474795ddf35ddc51113
+    - name: all cow animations_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 031af66c954e45a44b88eaad34f5d679
+    - name: all cow animations_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: d13965490396e3049bd1a46f32123778
+    - name: all cow animations_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 68cfc495c9733c942b0199c172a664a2
+    - name: all cow animations_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: f6f69861beca1d640ba2540776f6d167
+    - name: all cow animations_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: a54d9cfc7130d8c4cb5c9bcc873bfc1b
+    - name: all cow animations_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: d0b2500c2cace4e49ae196f5812c96d2
+    - name: all cow animations_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: db1648d9a853edb4282adfe35a260530
+    - name: all cow animations_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 3275734ad59005e488e3abde2a5c5a31
+    - name: all cow animations_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 4720500c1a49e6a4b9497ba15cd53ba9
+    - name: all cow animations_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: dbe4e7776714f94428dd3ab86fd1a5fd
+    - name: all cow animations_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: c51f1ae7e43fff74ba4ab6ee07345c7e
+    - name: all cow animations_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 00fc72a14cf027d459b4c34da2642c68
+    - name: all cow animations_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 9eabbc2945e644645810f901eaed1214
+    - name: all cow animations_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: b24b27d5401bd2544852c975f93982ec
+    - name: all cow animations_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: f207f2f69f1471445acb951592c76048
+    - name: all cow animations_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: b66e94fe84602864abbe8837a7e79601
+    - name: all cow animations_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: eaf5b419419e8934f91aff1129d90ead
+    - name: all cow animations_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 4d60d693429f6fc4fb2ed5e120d6e99b
+    - name: all cow animations_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: dab039714ddcbb345820bcdc3b5b6451
+    - name: all cow animations_Frame_22
+      frameIndex: 22
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 22e49962256c5a0478402cd65f536ebe
+    - name: all cow animations_Frame_23
+      frameIndex: 23
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 7cb8fda929840e44d87b36c75dc12603
+    - name: all cow animations_Frame_24
+      frameIndex: 24
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 4b71cccf02ac97b4fbe3793517a14c1f
+    - name: all cow animations_Frame_25
+      frameIndex: 25
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 0ccc292cfd26f4149bb679d05df63efb
+    - name: all cow animations_Frame_26
+      frameIndex: 26
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 72e63146f11cf334a9451606fa39e827
+    - name: all cow animations_Frame_27
+      frameIndex: 27
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 26d2526e0045a43498aaa5a34fbb95c1
+    - name: all cow animations_Frame_28
+      frameIndex: 28
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: fd62d18794afd0a49988e6c5496d28b2
+    - name: all cow animations_Frame_29
+      frameIndex: 29
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: a61f85385c13fab4585aa949792d5bef
+    - name: all cow animations_Frame_30
+      frameIndex: 30
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 254bfe4106ccb324eb67b2d94087c883
+    - name: all cow animations_Frame_31
+      frameIndex: 31
+      additiveSortOrder: 0
+      cellRect:
+        x: 0
+        y: -32
+        width: 304
+        height: 672
+      spriteId: 81854386a7d609e4fa3d3647808dd831
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 304, y: 256}
