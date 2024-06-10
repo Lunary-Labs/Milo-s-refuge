@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour {
-  private float _speed = 4f;
+  private float _walkSpeed = 4f;
+  private float _runSpeed = 6f;
+  private float _currentSpeed;
   private Animator _animator;
   private string _lastDirection = "CharacterIdleFront";
   private bool _isGathering = false;
@@ -12,15 +14,23 @@ public class CharacterController2D : MonoBehaviour {
 
   void Start() {
     _animator = GetComponent<Animator>();
+    _currentSpeed = _walkSpeed;
   }
 
   void Update() {
     Vector2 movement = new Vector2();
     if (!_isGathering) {
+      // TODO: use unity mapping system
       if (Input.GetKey(KeyCode.W)) movement.y = 1;
       if (Input.GetKey(KeyCode.S)) movement.y = -1;
       if (Input.GetKey(KeyCode.A)) movement.x = -1;
       if (Input.GetKey(KeyCode.D)) movement.x = 1;
+
+      if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) {
+        _currentSpeed = _runSpeed;
+      } else {
+        _currentSpeed = _walkSpeed;
+      }
 
       HandleMovement(movement);
       HandleAnimation(movement);
@@ -32,7 +42,7 @@ public class CharacterController2D : MonoBehaviour {
 
   void HandleMovement(Vector2 movement) {
     movement.Normalize();
-    transform.Translate(movement * _speed * Time.deltaTime, Space.World);
+    transform.Translate(movement * _currentSpeed * Time.deltaTime, Space.World);
   }
 
   void HandleAnimation(Vector2 movement) {
@@ -47,7 +57,6 @@ public class CharacterController2D : MonoBehaviour {
       Vector2 toTile = _currentNearestTile.transform.position - transform.position;
       DetermineDirection(toTile);
     }
-
     _isGathering = true;
     string gatherAnimation = DetermineGatherAnimation();
     _animator.Play(gatherAnimation);
@@ -77,6 +86,9 @@ public class CharacterController2D : MonoBehaviour {
   string DetermineAnimationState(Vector2 movement) {
     if (movement.magnitude > 0) {
       DetermineDirection(movement);
+      if (_currentSpeed == _runSpeed) {
+        return _lastDirection.Replace("Walk", "Run");
+      }
     } else {
       _lastDirection = _lastDirection.Contains("Walk") ? _lastDirection.Replace("Walk", "Idle") : _lastDirection;
     }
