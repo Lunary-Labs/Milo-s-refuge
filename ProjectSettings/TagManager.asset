@@ -41,23 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Water
+    uniqueID: 1266778239
+    locked: 0
   - name: Ground
     uniqueID: 2965623
-    locked: 0
-  - name: WaterDecorations
-    uniqueID: 3970012087
     locked: 0
   - name: Fields
     uniqueID: 4062676651
     locked: 0
-  - name: GroundDecorations
+  - name: AboveGround
     uniqueID: 284426699
-    locked: 0
-  - name: Buildings
-    uniqueID: 3763509589
-    locked: 0
-  - name: Characters
-    uniqueID: 2640019049
     locked: 0
   - name: UI
     uniqueID: 2085216099

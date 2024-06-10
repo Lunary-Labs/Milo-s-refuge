@@ -37,7 +37,6 @@ public class FieldTile : MonoBehaviour {
     }
   }
 
-  // Harvest tile and reset states.
   public void Harvest() {
     if (Harvestable) {
       GrowthState = 0;
