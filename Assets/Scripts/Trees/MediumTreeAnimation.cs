@@ -8,16 +8,15 @@ public class BigTreeAnimation : MonoBehaviour {
 
   void Start() {
     _animator = GetComponent<Animator>();
-    _timeToNextAnimation = Random.Range(5f, 7f);
+    _timeToNextAnimation = Random.Range(15f, 40f);
   }
 
   void Update() {
     _timeToNextAnimation -= Time.deltaTime;
     if (_timeToNextAnimation <= 0) {
       string animationName = Random.Range(0, 2) == 0 ? "MediumTreeBump" : "MediumTreeJiggle";
-      Debug.Log(animationName);
       _animator.Play(animationName);
-      _timeToNextAnimation = Random.Range(5f, 7f);
+      _timeToNextAnimation = Random.Range(15f, 40f);
       StartCoroutine(WaitForAnimation());
     }
   }
@@ -27,5 +26,4 @@ public class BigTreeAnimation : MonoBehaviour {
     yield return new WaitForSeconds(animationLength);
     _animator.Play("MediumTreeIdle");
   }
-
 }
