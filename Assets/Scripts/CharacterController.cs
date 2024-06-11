@@ -13,10 +13,12 @@ public class CharacterController2D : MonoBehaviour {
   private FieldTile _currentNearestTile = null;
   private List<FieldTile> nearbyTiles = new List<FieldTile>();
   private Vector2 _movement = Vector2.zero;
+  private AudioController _audioController;
 
   void Start() {
     _animator = GetComponent<Animator>();
     _rigidbody = GetComponent<Rigidbody2D>();
+    _audioController = GameObject.Find("AudioController").GetComponent<AudioController>();
     _currentSpeed = _walkSpeed;
   }
 
@@ -32,8 +34,9 @@ public class CharacterController2D : MonoBehaviour {
       if (Input.GetKey(KeyCode.S)) _movement.y = -1;
       if (Input.GetKey(KeyCode.A)) _movement.x = -1;
       if (Input.GetKey(KeyCode.D)) _movement.x = 1;
-      _currentSpeed = (Input.GetKey(KeyCode.LeftControl)) ? _runSpeed : _walkSpeed;
+      _currentSpeed = (Input.GetKey(KeyCode.LeftShift)) ? _runSpeed : _walkSpeed;
       HandleAnimation(_movement);
+      _audioController.HandleStepSounds(_movement.magnitude > 0);
     }
 
     UpdateNearestTile();
@@ -48,6 +51,7 @@ public class CharacterController2D : MonoBehaviour {
   }
 
   void StartGathering() {
+    _audioController.PlayHarvestSound(0.3f);
     if (_currentNearestTile != null) {
       Vector2 toTile = _currentNearestTile.transform.position - transform.position;
       DetermineDirection(toTile);
