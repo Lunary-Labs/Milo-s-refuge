@@ -3162,6 +3162,7 @@ GameObject:
   - component: {fileID: 1314934043}
   - component: {fileID: 1314934045}
   - component: {fileID: 1314934046}
+  - component: {fileID: 1314934047}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -3401,7 +3402,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3485,6 +3486,119 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1314934047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314934036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12993e7249136ba48a08c0fdd6ff2f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StepSounds:
+  - {fileID: 8300000, guid: 5d29567606ea9254b856e5c8cff283d0, type: 3}
+  - {fileID: 8300000, guid: e0ce243c0fa28f24b887d4e536c955f0, type: 3}
+  - {fileID: 8300000, guid: cc391033b385f28448423754f9bb2002, type: 3}
+  HarvestSounds:
+  - {fileID: 8300000, guid: 3fcbbc1daf0e713419497273962b1eb5, type: 3}
+  - {fileID: 8300000, guid: 62e20edab80ecae40ad015eb7830e38b, type: 3}
+--- !u!1 &1433870290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433870293}
+  - component: {fileID: 1433870295}
+  - component: {fileID: 1433870294}
+  m_Layer: 0
+  m_Name: WeatherController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433870293
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433870290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 255.57622, y: -197.27144, z: -0.041661486}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1433870294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433870290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ffa843483469348b402f6cdefba650, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsDay: 0
+  _light: {fileID: 0}
+  _gradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0.060356334, b: 0.16037738, a: 1}
+    key1: {r: 0.17866677, g: 0.31847548, b: 0.5188679, a: 1}
+    key2: {r: 0.8962264, g: 0.5817591, b: 0.14796188, a: 1}
+    key3: {r: 0.8490566, g: 0.83711296, b: 0.8290317, a: 1}
+    key4: {r: 0.96533364, g: 0.9716981, b: 0.70127267, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 10925
+    ctime2: 16384
+    ctime3: 21627
+    ctime4: 65535
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 24287
+    atime2: 28334
+    atime3: 32768
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 5
+    m_NumAlphaKeys: 4
+  _globalLightObject: {fileID: 0}
+  _weatherController: {fileID: 0}
+--- !u!114 &1433870295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433870290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca004e50b8e47e49bf22f902726e7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DayCounter: 0
+  CurrentTime: 
+  Percentage: 0
 --- !u!1 &1452432037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,18 +4496,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c996ea91fd0ac4b921c49fca0d4325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayAmbientSounds:
+  DayAmbientSounds:
   - {fileID: 8300000, guid: 780b1d078a03f0c4aa8d6cde6e01a68f, type: 3}
-  nightAmbientSounds:
+  NightAmbientSounds:
   - {fileID: 8300000, guid: 5b8ccd7337897014a8f6e00c001692cb, type: 3}
-  stepSounds:
-  - {fileID: 8300000, guid: 5d29567606ea9254b856e5c8cff283d0, type: 3}
-  - {fileID: 8300000, guid: e0ce243c0fa28f24b887d4e536c955f0, type: 3}
-  - {fileID: 8300000, guid: cc391033b385f28448423754f9bb2002, type: 3}
-  harvestSounds:
-  - {fileID: 8300000, guid: 3fcbbc1daf0e713419497273962b1eb5, type: 3}
-  - {fileID: 8300000, guid: 62e20edab80ecae40ad015eb7830e38b, type: 3}
-  _isDay: 0
 --- !u!1 &2144208184
 GameObject:
   m_ObjectHideFlags: 0
@@ -4512,3 +4618,4 @@ SceneRoots:
   - {fileID: 1548304763}
   - {fileID: 251996530}
   - {fileID: 2138242350}
+  - {fileID: 1433870293}
