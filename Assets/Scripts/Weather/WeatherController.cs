@@ -7,7 +7,7 @@ public class WeatherController : MonoBehaviour {
   [SerializeField] public int DayCounter = 0;
   public float Percentage = 0f;
   private float _timeElapsed = 0f;
-  private float _duration = 48f; // Will be 1440 (1sec RT = 1 min IGT)
+  private float _duration = 100f; // Will be 1440 (1sec RT = 1 min IGT)
 
   void Update() {
     _timeElapsed += Time.deltaTime;
