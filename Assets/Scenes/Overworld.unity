@@ -1086,7 +1086,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420033}
   - component: {fileID: 519420035}
   m_Layer: 0
@@ -1226,18 +1225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c515239685c6345a58c14d5e9f52b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 325e7de8bd4ce84468dd8babffd06140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84dd3b136997e6847ba290bdd6cbc182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  Target: {fileID: 0}
 --- !u!1 &535217824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3629,7 +3616,6 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 5
     m_NumAlphaKeys: 2
-  _globalLightObject: {fileID: 0}
   _weatherController: {fileID: 0}
 --- !u!114 &1433870295
 MonoBehaviour:
@@ -3643,8 +3629,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aca004e50b8e47e49bf22f902726e7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DayCounter: 0
   CurrentTime: 
+  DayCounter: 0
   Percentage: 0
 --- !u!1 &1452432037
 GameObject:

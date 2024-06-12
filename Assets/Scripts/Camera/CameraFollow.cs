@@ -3,30 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
+  [SerializeField] public Transform Target;
   private Vector3 _offset = new Vector3(0f, 0f, -10f);
   private float _smoothSpeed = 0.4f;
   private Vector3 _velocity = Vector3.zero;
-
-  [SerializeField] public Transform target;
   private Transform oldTarget;
 
   void Start() {
-    target = GameObject.Find("Character").transform;
+    Target = GameObject.Find("Character").transform;
   }
 
   void Update() {
-    Vector3 targetPosition = target.position + _offset;
+    Vector3 targetPosition = Target.position + _offset;
     transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, _smoothSpeed);
   }
 
   public void SetFocus(Transform newTarget, float duration) {
-    oldTarget = target;
-    target = newTarget;
+    oldTarget = Target;
+    Target = newTarget;
     StartCoroutine(ResetTargetAfterDuration(duration));
   }
 
   private IEnumerator ResetTargetAfterDuration(float duration) {
     yield return new WaitForSeconds(duration);
-    target = oldTarget;
+    Target = oldTarget;
   }
 }

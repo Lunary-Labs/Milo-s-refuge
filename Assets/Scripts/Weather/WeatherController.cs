@@ -3,30 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeatherController : MonoBehaviour {
+  public string CurrentTime; // TODO: Remove this display attribute in the future
   [SerializeField] public int DayCounter = 0;
-  [SerializeField] public string CurrentTime; // TODO: remove this in future
   public float Percentage = 0f;
-  private float _duration = 24f;
-  private float _startTime;
-
-  private void Start() {
-    _startTime = Time.time;
-  }
+  private float _timeElapsed = 0f;
+  private float _duration = 48f; // Will be 1440 (1sec RT = 1 min IGT)
 
   void Update() {
-    float timeElapsed = Time.time - _startTime;
-    if (timeElapsed >= _duration) {
-      _startTime = Time.time;
+    _timeElapsed += Time.deltaTime;
+    if (_timeElapsed >= _duration) {
       DayCounter++;
-      Percentage = 0;
-      timeElapsed = 0;
+      _timeElapsed = 0;
     }
-    // Calculate percentage as ratio of timeElapsed to _duration
-    Percentage = timeElapsed / _duration;
+    Percentage = _timeElapsed / _duration;
     UpdateCurrentTime(Percentage);
   }
 
-  // TODO: remove this method in future
+  // TODO: Remove this temp function in the future
   private void UpdateCurrentTime(float percentage) {
     float totalMinutesInDay = 24 * 60;
     float currentMinutes = percentage * totalMinutesInDay;
