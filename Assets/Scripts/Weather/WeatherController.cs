@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.VFX;
 using UnityEngine;
 
 public class WeatherController : MonoBehaviour {
   public int DayCounter = 0;
   public float Percentage = 0f;
-  public string CurrentWeather = "Neutral";
+  public string CurrentWeather = "Fog";
 
   private float _timeElapsed = 0f;
   private float _dayDuration = 48f; // Will be 1440 (1sec RT = 1 min IGT)
@@ -16,18 +17,28 @@ public class WeatherController : MonoBehaviour {
   public float _nextWeatherDelay;
   private List<WeatherState> _weatherStates;
 
-  public GameObject _weatherParticles;
-  public ParticleSystem _particleSystem;
+  private GameObject _weatherParticles;
+  private ParticleSystem _particleSystem;
+
+  private GameObject _fogGameObject;
+  private VisualEffect _fogVFX;
 
   void Start() {
     _weatherParticles = GameObject.Find("Main Camera").transform.Find("WeatherParticles").gameObject;
     _particleSystem =_weatherParticles.GetComponent<ParticleSystem>();
+    _fogGameObject = GameObject.Find("Main Camera").transform.Find("Fog").gameObject;
+    _fogVFX =_fogGameObject.GetComponent<VisualEffect>();
     _weatherStates = new List<WeatherState>() {
-      new WeatherState("Neutral", 0.68f),
-      new WeatherState("Rain", 0.08f),
-      new WeatherState("Clouds", 0.08f),
-      new WeatherState("Fog", 0.08f),
-      new WeatherState("Storm", 0.08f)
+      // new WeatherState("Neutral", 0.68f),
+      // new WeatherState("Rain", 0.08f),
+      // new WeatherState("Clouds", 0.08f),
+      // new WeatherState("Fog", 0.08f),
+      // new WeatherState("Storm", 0.08f)
+      new WeatherState("Neutral", 0.2f),
+      new WeatherState("Rain", 0.2f),
+      new WeatherState("Clouds", 0.2f),
+      new WeatherState("Fog", 0.2f),
+      new WeatherState("Storm", 0.2f)
     };
     CurrentWeather = "Neutral";
   }
@@ -52,26 +63,30 @@ public class WeatherController : MonoBehaviour {
             // TODO Make transitions on particle system instead of just active/inactive
             case "Rain":
               _weatherParticles.SetActive(true);
+              _fogVFX.SetBool("SpawnActive", true);
               // TODO start rain ambient sound
               // TODO color change
               break;
             case "Storm":
               _weatherParticles.SetActive(true);
+              _fogVFX.SetBool("SpawnActive", true);
               // TODO start storm ambient sounds
               // TODO color change
               break;
             case "Clouds":
               _weatherParticles.SetActive(false);
-              // TODO maybe another particle system
+              _fogVFX.SetBool("SpawnActive", false);
+              // TODO: maybe a `could` particle/vfx grap
               // TODO color change
               break;
             case "Fog":
               _weatherParticles.SetActive(false);
-              // TODO maybe another particle system
+              _fogVFX.SetBool("SpawnActive", true);
               // TODO color change
               break;
             default:
               _weatherParticles.SetActive(false);
+              _fogVFX.SetBool("SpawnActive", false);
               break;
           }
           break;
