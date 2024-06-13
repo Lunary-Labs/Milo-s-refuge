@@ -29,16 +29,11 @@ public class WeatherController : MonoBehaviour {
     _fogGameObject = GameObject.Find("Main Camera").transform.Find("Fog").gameObject;
     _fogVFX =_fogGameObject.GetComponent<VisualEffect>();
     _weatherStates = new List<WeatherState>() {
-      // new WeatherState("Neutral", 0.68f),
-      // new WeatherState("Rain", 0.08f),
-      // new WeatherState("Clouds", 0.08f),
-      // new WeatherState("Fog", 0.08f),
-      // new WeatherState("Storm", 0.08f)
-      new WeatherState("Neutral", 0.2f),
-      new WeatherState("Rain", 0.2f),
-      new WeatherState("Clouds", 0.2f),
-      new WeatherState("Fog", 0.2f),
-      new WeatherState("Storm", 0.2f)
+      new WeatherState("Neutral", 0.6f),
+      new WeatherState("Rain", 0.1f),
+      new WeatherState("Clouds", 0.1f),
+      new WeatherState("Fog", 0.1f),
+      new WeatherState("Storm", 0.1f)
     };
     CurrentWeather = "Neutral";
   }

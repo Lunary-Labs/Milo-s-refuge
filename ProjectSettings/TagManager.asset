@@ -57,8 +57,11 @@ TagManager:
   - name: TranparencyOverPlayer
     uniqueID: 3100923063
     locked: 0
-  - name: Particles
+  - name: Rain
     uniqueID: 2804330367
+    locked: 0
+  - name: Fog
+    uniqueID: 2907138647
     locked: 0
   - name: UI
     uniqueID: 2085216099
