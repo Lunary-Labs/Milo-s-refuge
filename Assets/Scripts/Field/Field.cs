@@ -5,15 +5,12 @@ using UnityEngine;
 public class Field : MonoBehaviour {
   public List<GameObject> FieldTiles = new List<GameObject>();
 
-  // Basic growth and gather speed
-  private float _baseGrowthSpeed = 1f;
-  private float _growthSpeed;
+  private float _growthSpeed = 1.0f;
 
   void Start() {
     foreach (Transform child in transform) {
       FieldTiles.Add(child.gameObject);
     }
-    _growthSpeed = _baseGrowthSpeed;
   }
 
   void Update() {

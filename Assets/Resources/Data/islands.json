@@ -1,0 +1,34 @@
+{
+  "islands": [
+    {
+      "world": "Overworld",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "prefabPath": "Prefabs/Islands/Overworld1/Overworld1",
+      "islandLevel": 0,
+      "islandMaxLevel": 2
+    },
+    {
+      "world": "Overworld",
+      "position": {
+        "x": 25,
+        "y": 0
+      },
+      "prefabPath": "Prefabs/Islands/Overworld1/Overworld1",
+      "islandLevel": 1,
+      "islandMaxLevel": 2
+    },
+    {
+      "world": "Overworld",
+      "position": {
+        "x": 50,
+        "y": 0
+      },
+      "prefabPath": "Prefabs/Islands/Overworld1/Overworld1",
+      "islandLevel": 2,
+      "islandMaxLevel": 2
+    }
+  ]
+}

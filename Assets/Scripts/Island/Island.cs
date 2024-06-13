@@ -17,6 +17,6 @@ public class Island : MonoBehaviour {
     }
 
     ChildTilemapColliders = GetComponentsInChildren<TilemapCollider2D>();
-    Workbench = transform.Find("workbench");
+    Workbench = transform.Find("Workbench");
   }
 }

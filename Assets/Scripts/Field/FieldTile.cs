@@ -16,10 +16,7 @@ public class FieldTile : MonoBehaviour {
 
   void Start() {
     _spriteRenderer = GetComponent<SpriteRenderer>();
-  }
-
-  void Update() {
-    _spriteRenderer.sprite = Sprites[GrowthState];
+    _nextGrowthTimer = Random.Range(_timerMin, _timerMax);
   }
 
   public void Grow(float time) {
@@ -27,6 +24,7 @@ public class FieldTile : MonoBehaviour {
       _growthTimer += time;
       if (_growthTimer >= _nextGrowthTimer) {
         GrowthState += 1;
+        _spriteRenderer.sprite = Sprites[GrowthState];
         _growthTimer = 0f;
         _nextGrowthTimer = Random.Range(_timerMin, _timerMax);
         if (GrowthState >= _maxGrowth) {
@@ -40,6 +38,7 @@ public class FieldTile : MonoBehaviour {
   public void Harvest() {
     if (Harvestable) {
       GrowthState = 0;
+      _spriteRenderer.sprite = Sprites[GrowthState];
       Harvestable = false;
       _nextGrowthTimer = Random.Range(_timerMin, _timerMax);
       GameObject.Find("Character").GetComponent<Character>().ChangeResource(transform.name, 1);

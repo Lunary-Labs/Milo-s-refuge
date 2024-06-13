@@ -42,4 +42,4 @@ Prestige, with complete reset and give a permanent bonus.
 Incremental music.  
 Housing.  
 Expandable islands.  
-Merchant ship. 
+Merchant ship.  
