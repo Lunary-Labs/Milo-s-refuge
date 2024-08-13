@@ -8,29 +8,12 @@ The resources are brought back by boat to the main island where they will be use
 The goal of the game is to produce as much money as possible by improving the fields and the livestock.  
 Only calm piano music.  
 
-# Assets :
+# Objectives:  
 
-World : https://cupnooble.itch.io/sprout-lands-asset-pack  
-Farm : https://shubibubi.itch.io/cozy-farm  
-Food 1 : https://ghostpixxells.itch.io/pixelfood  
-Food 2 : https://henrysoftware.itch.io/pixel-food  
-Fish : https://shubibubi.itch.io/cozy-fishing  
-UI : https://cupnooble.itch.io/sprout-lands-ui-pack  
-Gamepad UI : https://greatdocbrown.itch.io/gamepad-ui  
-
-## Possible assets :
-
-food and kitchenware : https://piiixl.itch.io/food
-
-# Features:  
-
-Harvest improvement (size and production)   
-Boat improvement  
-Cooks (Cooking speed)   
-Fertilizer (production speed)   
-Treats (harvesting speed)  
-Missions  
-Automatic harvest (little cats)  
+Main story (nothing too fancy).  
+Missions and side quests.  
+Automatic harvest (little cats).  
+Expandable islands.  
 
 # Ideas:   
 
@@ -38,8 +21,5 @@ Player character
 Implement shops  
 Implement a city?  
 Different regions with completely different resources.  
-Prestige, with complete reset and give a permanent bonus.  
-Incremental music.  
 Housing.  
-Expandable islands.  
 Merchant ship.  
