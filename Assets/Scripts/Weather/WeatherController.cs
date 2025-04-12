@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeatherController : MonoBehaviour {
   public int DayCounter = 0;
   public float Percentage = 0f;
-  public string CurrentWeather = "Fog";
+  public string CurrentWeather = "Neutral";
 
   private float _timeElapsed = 0f;
   private float _dayDuration = 48f; // Will be 1440 (1sec RT = 1 min IGT)
@@ -25,9 +25,9 @@ public class WeatherController : MonoBehaviour {
 
   void Start() {
     _weatherParticles = GameObject.Find("Main Camera").transform.Find("WeatherParticles").gameObject;
-    _particleSystem =_weatherParticles.GetComponent<ParticleSystem>();
+    _particleSystem = _weatherParticles.GetComponent<ParticleSystem>();
     _fogGameObject = GameObject.Find("Main Camera").transform.Find("Fog").gameObject;
-    _fogVFX =_fogGameObject.GetComponent<VisualEffect>();
+    _fogVFX = _fogGameObject.GetComponent<VisualEffect>();
     _weatherStates = new List<WeatherState>() {
       new WeatherState("Neutral", 0.6f),
       new WeatherState("Rain", 0.1f),
